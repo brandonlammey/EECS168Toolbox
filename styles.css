@@ -1,0 +1,93 @@
+body
+{
+    background-color: #FCFCFB;
+}
+
+#mainNav
+{
+    background-color: #6CC3E8;
+    text-transform: uppercase;
+}
+
+#mainNav .navbar-nav .nav-item:hover {
+    outline: none;
+    background-color: transparent;
+  }
+
+  .nav-link{
+      color: #55606F !important;
+  }
+
+  .nav-link:hover{
+      color: white !important;
+      border-bottom: 2px solid white;
+  }
+
+.content-section {
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    /* background-color: #BDC2C6; */
+  }
+
+  .portfolio-item {
+    margin-bottom: 2%;
+  }
+  
+  .pagination {
+    margin-bottom: 0.5%;
+  }
+
+.code
+{
+    height:250px;
+    width:100%;
+    padding:10px;
+
+    background-color:#55606F;
+
+    overflow:auto;
+    color: #BDC2C6;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+
+    scrollbar-base-color:#BCCCD4;
+
+}
+strong
+{
+    color: #6CC3E8;
+}
+em{
+    color: #8BD085;
+    font-weight: 500;
+}
+
+
+
+.masthead {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 9% 0 2% 0;
+    text-align: center;
+    color: #55606F;
+    background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+    background-color: #FCFCFB;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.brand-heading {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Fix ancher tag scroll position */
+.row{
+    padding-top: 5%;
+}
+
+
+
