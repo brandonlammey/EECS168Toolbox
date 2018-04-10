@@ -349,14 +349,27 @@
                     <div class="col-lg-6 portfolio-item">
                         <div class="card h-100">
                                 <div class="code">
-                                    
+                                  
+                                  <strong>void</strong> function_name( parameter list ) <br>
+                                  {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; <em>//body of the function</em><br>
+                                  }<br>
+
                                 </div>
                           <div class="card-body">
                             <h4 class="card-title">
                               <a href="#">Void Functions</a>
                             </h4>
                             <p class="card-text"> 
+                                The function name and the parameter list together constitute the function signature.
+                                To use the function this name is called upon with the appropriate paramaters (if any) fed in. 
+                                A parameter is like a placeholder. 
+                                When a function is invoked, you pass a value to the parameter. 
+                                This value is referred to as an argument. Parameters are optional.
+                                Void functions return no values but can modify data and print to the console.
+                                <br><br>
 
+                                To call a function, you simply need to pass the required parameters along with function name.
                             </p>
                             </div>
                         </div>
@@ -366,6 +379,21 @@
                   <div class="col-lg-6 portfolio-item">
                       <div class="card h-100">
                               <div class="code">
+                                  <strong>return_type</strong> function_name( parameter list ) <br>
+                                  {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//body of the function</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(returnVar);<br>
+                                  }<br>
+                                  
+                                  <em> /*<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Call by Reference VS Call by Value
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;All arrays are pass by reference<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;primatives are call by value unless '&' is used <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&typeName will result in call by value 
+                                    <br>
+                                    /*
+                                  </em><br>
                                   
                               </div>
                         <div class="card-body">
@@ -373,7 +401,27 @@
                             <a href="#">Type Functions</a>
                           </h4>
                           <p class="card-text"> 
+                              A function may return a value. The return_type is the data type of the value the function returns
+                              (such as an int, bool, int*, etc). 
 
+                              <br><br>
+
+                              Calling this function is similar to void but to store the value returned 
+                              you can set is equal to a variable of the same type.
+
+                              <br><br>
+                              NOTE: For all function arguments, the function must declare variables that accept the values of the arguments (called formal parameters). 
+                              The formal parameters behave like other local variables inside the function and are created upon entry into the function and destroyed upon exit.
+                              There are two methods to pass an argument:<br>
+                              <ul class="card-item">
+                                <li>Call by Value: This method copies the actual value of an argument into the formal parameter of the function. 
+                                  In this case, changes made to the parameter inside the function have no effect on the argument.</li>
+                                <li>Call by Reference: This method copies the reference of an argument into the formal parameter. 
+                                  Inside the function, the reference is used to access the actual argument used in the call. 
+                                  This means that changes made to the parameter affect the argument. </li>
+                              </ul>
+                              
+                              
                           </p>
                           </div>
                       </div>
