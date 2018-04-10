@@ -89,18 +89,21 @@
                               <div class="card-body">
 
                                 <h4 class="card-title">
-                                  <a href="#">Data Types / Operators</a>
+                                  <a href="#dataTypes" data-toggle="collapse">Data Types / Operators</a>
                                 </h4>
-                                <p class="card-text">Data types are classifications given to variables that describe what operations can be applied to them.</p>
-                                <ul class="card-text">
-                                  <li>integer: Whole numbers</li>
-                                  <li>double: Numbers with decimal point</li>
-                                  <li>boolean: Represent logical values (True and False)</li>
-                                  <li>character: Represent a single character</li>
-                                  <li>string: Represent a series of characters. Can contain spaces.</li>
-                                </ul>
-                                <p class="card-text">Operators work just as you would expect. The mod operator gives us the remainder of two numbers. For example, 10 mod 4 will give us 2 because 10/2 has remainder 2.</p>
-                                <p class="card-text">NOTE: operations between different data types are allowed but we need to keep in mind what data types are being assigned. For example, if we assign the addition of two doubles to be an integer, we will only get the whole number (not rounded).</p>
+                                <div id="dataTypes" class="collapse">
+                                  <p class="card-text">Data types are classifications given to variables that describe what operations can be applied to them.</p>
+                                  <ul class="card-text">
+                                    <li>integer: Whole numbers</li>
+                                    <li>double: Numbers with decimal point</li>
+                                    <li>boolean: Represent logical values (True and False)</li>
+                                    <li>character: Represent a single character</li>
+                                    <li>string: Represent a series of characters. Can contain spaces.</li>
+                                  </ul>
+                                  <p class="card-text">Operators work just as you would expect. The mod operator gives us the remainder of two numbers. For example, 10 mod 4 will give us 2 because 10/2 has remainder 2.</p>
+                                  <p class="card-text">NOTE: operations between different data types are allowed but we need to keep in mind what data types are being assigned. For example, if we assign the addition of two doubles to be an integer, we will only get the whole number (not rounded).</p>
+                                </div>
+                          
                               </div>
                             </div>
                     </div>
@@ -120,25 +123,24 @@
                                             > <em>// Greater Than</em> <br>
                                             < <em>// Less Than </em> <br>
                                             >=, <= <em>// Greater than or equal, Less than or equal</em> <br>
-
-
-
                                     </div>
 
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">Boolean Logic</a>
+                                  <a href="#boolLogic" data-toggle="collapse">Boolean Logic</a>
                                 </h4>
-                                  <ul class="card-text">
-                                      <li>AND: Gives true only when both conditions are true. Otherwise false.</li>
-                                      <li>OR: Gives true when at least one condition is true. False if both conditions are false.</li>
-                                      <li>NOT: Negates whatever logic is obtained after. If true gives false and if false gives true</li>
-                                      <li>EQUAL: Gives true when two values are equal</li>
-                                      <li>NOT EQUAL: Gives true when two values are not equal</li>
-                                      <li>GREATER THAN: Gives true when the value on the left is bigger than the value on the right</li>
-                                      <li>LESS THAN: Gives true when the value on the right is bigger than the value on the left</li>
-                                  </ul>
-                                  <p class="card-text">NOTE: A single equal sign "=" represents assignment while a double equal "==" represents comparison. If you use "=" for comparison instead of "==", the result will always be TRUE, no matter what the values are.</p>
+                                  <div id="boolLogic" class="collapse">
+                                      <ul class="card-text">
+                                          <li>AND: Gives true only when both conditions are true. Otherwise false.</li>
+                                          <li>OR: Gives true when at least one condition is true. False if both conditions are false.</li>
+                                          <li>NOT: Negates whatever logic is obtained after. If true gives false and if false gives true</li>
+                                          <li>EQUAL: Gives true when two values are equal</li>
+                                          <li>NOT EQUAL: Gives true when two values are not equal</li>
+                                          <li>GREATER THAN: Gives true when the value on the left is bigger than the value on the right</li>
+                                          <li>LESS THAN: Gives true when the value on the right is bigger than the value on the left</li>
+                                      </ul>
+                                      <p class="card-text">NOTE: A single equal sign "=" represents assignment while a double equal "==" represents comparison. If you use "=" for comparison instead of "==", the result will always be TRUE, no matter what the values are.</p>
+                                  </div>
                               </div>
                             </div>
                     </div>
@@ -188,23 +190,23 @@
                                     </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">If / Else-If / Else</a>
+                                  <a href="#ifElse" data-toggle="collapse">If / Else-If / Else</a>
                                 </h4>
-                                <p class="card-text">
-                                  If statements give us the ability to control the flow of our program. We write a condition that check if such condition is met (check if true). If it is, we continue through the code in the correct branch.
-                                </p>
-                                <p class="card-text">
-                                  We can also include "else if" and/or "else" statements after an if to write code that will only be executed if the above conditions in the block are false.
-                                </p>
-                                <p class="card-text">
-                                  NOTE: 
-                                  <ul class="card-text">
-                                    <li>if statements do not necessarily require an else</li>
-                                    <li> if statements can be nested inside other if statements or within loops</li>
-                                  </ul>
-                                  
-                                </p>
-
+                                <div id="ifElse" class="collapse">
+                                    <p class="card-text">
+                                      If statements give us the ability to control the flow of our program. We write a condition that check if such condition is met (check if true). If it is, we continue through the code in the correct branch.
+                                    </p>
+                                    <p class="card-text">
+                                      We can also include "else if" and/or "else" statements after an if to write code that will only be executed if the above conditions in the block are false.
+                                    </p>
+                                    <p class="card-text">
+                                      NOTE: 
+                                      <ul class="card-text">
+                                        <li>if statements do not necessarily require an else</li>
+                                        <li> if statements can be nested inside other if statements or within loops</li>
+                                      </ul>
+                                    </p>
+                                </div>
                               </div>
                             </div>
                     </div>
@@ -245,9 +247,10 @@
                                     </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">Loops: While / Do-While / For</a>
+                                  <a href="#loops" data-toggle="collapse">Loops: While / Do-While / For</a>
                                 </h4>
-                                <p class="card-text">
+                                <div id="loops" class="collapse">
+                                  <p class="card-text">
                                     Loops are used when we need to repeatedly execute a block of statements. The code within the loop will execute as long as the conditions of the loop are met. 
 
                                     <ul class="card-text">
@@ -257,7 +260,9 @@
                                     </ul>
 
                                     NOTE: Avoid infinite loops by ensuring and condition is met which causes the loop to exit with the condition failing (evaluating to False).
-                                </p>
+                                  </p>
+                                </div>
+                                
                               </div>
                             </div>
                     </div>
@@ -281,9 +286,10 @@
                                     </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#"> 1-D Arrays </a>
+                                  <a href="#1DArrays" data-toggle="collapse"> 1-D Arrays </a>
                                 </h4>
-                                <p class="card-text">
+                                <div id="1DArrays" class="collapse">
+                                  <p class="card-text">
                                     An array is a collection of data that holds a fixed number of values of same type. Think of it as a grid of elements. A 1-D array will consist of one row with multiple columns, each holding a single value (all of which are the same data type) which can be accessed at an index arr[index].
                                     <ul class="card-text">
                                       <li>Stack Allocated: Array is declared on the stack and thus does not require "delete" statement to free memory</li>
@@ -301,9 +307,9 @@
                                       <li>
                                         Failing to free memory (use "delete" for every "new") will result in memory leaks
                                       </li>
-                                    </ul>
-                                      
-                                </p>
+                                    </ul>  
+                                  </p>
+                                </div>
                               </div>
                             </div>
                     </div>
@@ -335,12 +341,14 @@
                                     </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">Multi-Dimensional Arrays</a>
+                                  <a href="#multiDimArrays" data-toggle="collapse">Multi-Dimensional Arrays</a>
                                 </h4>
-                                <p class="card-text">
-                                    The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To create a dynamically allocated 2-D array, first an array of pointers is created. Each pointer is then used to point to a new array. This can be thought of as a 2-D grid with rows and columns.
-                                </p>
-                                <p class="card-text">NOTE: Remember to delete the arrays furthest from the initial pointer first and move in. Deleting the array of pointers first will only delete that array and result in the arrays that were being pointed to being lost (memory leaks) </p>
+                                <div id="multiDimArrays" class="collapse">
+                                    <p class="card-text">
+                                      The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To create a dynamically allocated 2-D array, first an array of pointers is created. Each pointer is then used to point to a new array. This can be thought of as a 2-D grid with rows and columns.
+                                    </p>
+                                    <p class="card-text">NOTE: Remember to delete the arrays furthest from the initial pointer first and move in. Deleting the array of pointers first will only delete that array and result in the arrays that were being pointed to being lost (memory leaks) </p>
+                                </div>
                               </div>
                             </div>
                     </div>
@@ -358,9 +366,10 @@
                                 </div>
                           <div class="card-body">
                             <h4 class="card-title">
-                              <a href="#">Void Functions</a>
+                              <a href="#voidFunctions" data-toggle="collapse">Void Functions</a>
                             </h4>
-                            <p class="card-text"> 
+                            <div id="voidFunctions" class="collapse">
+                              <p class="card-text"> 
                                 The function name and the parameter list together constitute the function signature.
                                 To use the function this name is called upon with the appropriate paramaters (if any) fed in. 
                                 A parameter is like a placeholder. 
@@ -370,8 +379,10 @@
                                 <br><br>
 
                                 To call a function, you simply need to pass the required parameters along with function name.
-                            </p>
+                              </p>
                             </div>
+                            
+                          </div>
                         </div>
                   </div>
 
@@ -398,9 +409,10 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#">Type Functions</a>
+                            <a href="#typeFunctions" data-toggle="collapse">Type Functions</a>
                           </h4>
-                          <p class="card-text"> 
+                          <div id="typeFunctions" class="collapse">
+                            <p class="card-text"> 
                               A function may return a value. The return_type is the data type of the value the function returns
                               (such as an int, bool, int*, etc). 
 
@@ -419,11 +431,11 @@
                                 <li>Call by Reference: This method copies the reference of an argument into the formal parameter. 
                                   Inside the function, the reference is used to access the actual argument used in the call. 
                                   This means that changes made to the parameter affect the argument. </li>
-                              </ul>
-                              
-                              
-                          </p>
+                              </ul>                               
+                            </p>
                           </div>
+                          
+                        </div>
                       </div>
                 </div>
 
@@ -435,14 +447,16 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#">Class Header</a>
+                            <a href="#classHeader" data-toggle="collapse">Class Header</a>
                           </h4>
-                          <p class="card-text"> 
-
-                          </p>
+                          <div id="classHeader" class="collapse">
+                            <p class="card-text"> 
+                              Hi
+                            </p>
                           </div>
-                      </div>
-                </div>
+                        </div>
+                    </div>
+                  </div>
 
                   <!-- Tool: Class Definition -->
                   <div class="col-lg-6 portfolio-item">
@@ -452,14 +466,16 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#">Class Definition</a>
+                            <a href="#classDefinition" data-toggle="collapse">Class Definition</a>
                           </h4>
-                          <p class="card-text"> 
-
-                          </p>
+                          <div id="classDefinition" class="collapse">
+                            <p class="card-text"> 
+                              Hi
+                            </p>
                           </div>
+                        </div>
                       </div>
-                </div>
+                  </div>
                 </div>
             </div>
     </section>
