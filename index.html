@@ -8,9 +8,11 @@
     <!-- Bootstrap CSS JAVASCRIPT -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- MY CSS -->
     <link rel="stylesheet" href="styles.css">
 
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Gugi|Press+Start+2P" rel="stylesheet">
 
     <title>EECS 168 REVIEW</title>
   </head>
@@ -22,7 +24,8 @@
             <a class="navbar-brand" href="#">
                             <!-- Brand/logo -->
             <a class="navbar-brand" href="#">
-                <img src="bird.jpg" alt="logo" style="width:40px;">
+              168
+                <!-- <img src="pic.jpg" alt="logo" style="width:40px;"> -->
             </a>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -452,7 +455,8 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;<strong>public:</strong><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;class_name(); <em>//Declare class constructor</em><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;~class_name(); <em>//Declare class destructor</em><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add other public scoped functions and variables*/</em><br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add other public scoped functions <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; and variables*/</em><br><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<strong>private:</strong><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add private scoped variables*/</em><br>
                               };<br>
@@ -494,7 +498,18 @@
               <div class="col-lg-6 portfolio-item">
                   <div class="card h-100">
                           <div class="code">
-                              
+                              <strong>#include</strong> "class_name.h"<br>
+                              <em>//constuctor definition</em><br>
+                              class_name :: class_name()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>//initialize variables to a default value</em><br>
+                              }<br>
+
+                              <strong>return_type</strong> class_name::classFunc(parameters)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*define functions</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>declared in the header (.h) files*/</em><br>
+                              }<br>
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
@@ -502,7 +517,14 @@
                       </h4>
                       <div id="classDefinition" class="collapse">
                         <p class="card-text"> 
-                          Hi
+                            The member function definitions for a class are stored in a separate .cpp file, which is called the class implementation file. 
+                            The file usually has the same name as the class, with the .cpp extension.
+
+                            NOTE:
+                            The advanages of storing class definition in separate file are
+                            The class is reusable
+                            The clients of the class know what member functions the class provides, how to call them and what return types to expect
+                            The clients do not know how the class's member functions are implemented.
                         </p>
                       </div>
                     </div>
@@ -812,6 +834,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-    
+
   </body>
 </html>
