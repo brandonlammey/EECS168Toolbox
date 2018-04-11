@@ -452,7 +452,8 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;<strong>public:</strong><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;class_name(); <em>//Declare class constructor</em><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;~class_name(); <em>//Declare class destructor</em><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add other public scoped functions and variables*/</em><br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add other public scoped functions <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; and variables*/</em><br><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<strong>private:</strong><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add private scoped variables*/</em><br>
                               };<br>
@@ -494,7 +495,18 @@
               <div class="col-lg-6 portfolio-item">
                   <div class="card h-100">
                           <div class="code">
-                              
+                              <strong>#include</strong> "class_name.h"<br>
+                              <em>//constuctor definition</em><br>
+                              class_name :: class_name()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>//initialize variables to a default value</em><br>
+                              }<br>
+
+                              <strong>return_type</strong> class_name::classFunc(parameters)<br>
+                              {
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>/*define functions</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<em>declared in the header (.h) files*/</em><br>
+                              }<br>
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
@@ -502,7 +514,14 @@
                       </h4>
                       <div id="classDefinition" class="collapse">
                         <p class="card-text"> 
-                          Hi
+                            The member function definitions for a class are stored in a separate .cpp file, which is called the class implementation file. 
+                            The file usually has the same name as the class, with the .cpp extension.
+
+                            NOTE:
+                            The advanages of storing class definition in separate file are
+                            The class is reusable
+                            The clients of the class know what member functions the class provides, how to call them and what return types to expect
+                            The clients do not know how the class's member functions are implemented.
                         </p>
                       </div>
                     </div>
@@ -789,6 +808,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-    
+
   </body>
 </html>
