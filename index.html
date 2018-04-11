@@ -443,7 +443,18 @@
                   <div class="col-lg-6 portfolio-item">
                       <div class="card h-100">
                               <div class="code">
-                                  
+                                  <strong>#ifdef</strong> CLASS_NAME_H <br>
+                                  <strong>#define</strong> CLASS_NAME_H <br><br>
+                                  <strong>class</strong> class_name <br>
+                                  {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>public:</strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;class_name(); <em>//Declare class constructor</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;~class_name(); <em>//Declare class destructor</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add other public scoped functions and variables*/</em><br><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>private:</strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Add private scoped variables*/</em><br>
+                                  };<br>
+                                  <strong>#endif</strong>
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
@@ -451,8 +462,15 @@
                           </h4>
                           <div id="classHeader" class="collapse">
                             <p class="card-text"> 
-                              Hi
+                              Header files allow us to declare what methods and member variables we are using in our class. A method is just how we call a function from a class.
                             </p>
+                            <p class="card-text">The first two lines as well as the last line of the header file will always be those pund sign declarations. These are just declarations we make to tell the compiler to define our header.</p>
+                            <p class="card-text">Methods and member variables inside classes can have either public or private scope:</p>
+                            <ul>
+                              <li>Public Scope: Methods and member variables declared here can be accessed by whoever is using the class (in most cases main). This means that values can be easily changed.</li>
+                              <li>Private Scope: Member variables declared here can only be accessed by methods inside of our class. So we cannot change a variable ourselves, we have to write a method that changes it for us.</li>
+                            </ul>
+                            <p class="card-text">Why use private? Because it allows us to add an extra level of protection to our variables. The fact that a variable cannot be changed anywhere in a program makes it much easier to find problems with our code.</p>
                           </div>
                         </div>
                     </div>
