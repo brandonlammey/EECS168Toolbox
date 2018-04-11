@@ -3,6 +3,7 @@ body
     background-color: #FCFCFB;
 }
 
+/* nav bar design */
 #mainNav
 {
     background-color: #6CC3E8;
@@ -12,31 +13,40 @@ body
 #mainNav .navbar-nav .nav-item:hover {
     outline: none;
     background-color: transparent;
-  }
+}
 
-  .nav-link{
-      color: #55606F !important;
-  }
+.nav-link{
+    color: #55606F !important;
+}
 
-  .nav-link:hover{
-      color: white !important;
-      border-bottom: 2px solid white;
-  }
+.nav-link:hover{
+    color: white !important;
+    border-bottom: 2px solid white;
+}
+.navbar-brand
+{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    color: #55606F;
+}
+
+
 
 .content-section {
-    padding-top: 0.1%;
-    padding-bottom: 0.1%;
-    /* background-color: #BDC2C6; */
-  }
+padding-top: 0.1%;
+padding-bottom: 0.1%;
+/* background-color: #BDC2C6; */
+}
 
-  .portfolio-item {
-    margin-bottom: 2%;
-  }
-  
-  .pagination {
-    margin-bottom: 0.5%;
-  }
+.portfolio-item {
+margin-bottom: 2%;
+}
 
+.pagination {
+margin-bottom: 0.5%;
+}
+
+/* code boxes */
 .code
 {
     height:250px;
@@ -53,6 +63,8 @@ body
     scrollbar-base-color:#BCCCD4;
 
 }
+
+/* strong and em tags */
 strong
 {
     color: #6CC3E8;
