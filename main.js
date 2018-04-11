@@ -22,3 +22,16 @@ $(document).ready(function(){
       } // End if
     });
   });
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a.navbar-brand").on('click', function(event) {
+
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800, function(){
+  
+      window.scrollTo(0,0);
+      });
+  });
+});
