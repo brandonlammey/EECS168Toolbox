@@ -786,15 +786,57 @@
                     </div>
 
                     <!-- Tool: Data Types / Operators -->
-                    <div class="col-lg-6 portfolio-item">
+                    <div class="col-lg-12 portfolio-item">
                             <div class="card h-100">
-                              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                              <div class="code problemCode">
+                                <strong>if</strong>((cond1 == 3 && cond2 != "True") || !cond3)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>((cond1 mod 3) == cond4)<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Pancake";<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Hi there";<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                }<br>
+                                <strong>else if</strong>(!(cond1 + cond4 >= cond5))<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(cond5 == "17")<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std:cout << "We got 17!";<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;<strong>else if</strong>(cond5 = 0)<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "We got 0?";<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "We didn't get 17 or 0."; <em>//Hint: This line will never be printed. Can you tell why?</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                }<br>
+                                <strong>if</strong>(cond3)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Cond 3 says bye!";<br>
+                                }<br>
+                                <strong>else</strong><br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Bye!";<br>
+                                }
+                              </div>
                               <div class="card-body">
 
                                 <h4 class="card-title">
-                                  <a href="#problem1">Problem</a>
+                                  <a href="#problem1">Problem 1: Data Types and If-Else</a>
                                 </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+                                <p class="card-text">What will be the output of this block of code if:</p>
+                                <ul class="card-text">
+                                  <li>cond1 = 4</li>
+                                  <li>cond2 = "False"</li>
+                                  <li>cond3 = True</li>
+                                  <li>cond4 = 1</li>
+                                  <li>cond5 = 17</li>
+                                </ul>
                               </div>
                             </div>
                     </div>
@@ -833,6 +875,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- main.js declared after jquery -->
     <script src="main.js"></script>
 
   </body>

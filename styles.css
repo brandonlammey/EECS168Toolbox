@@ -63,6 +63,10 @@ margin-bottom: 0.5%;
     scrollbar-base-color:#BCCCD4;
 
 }
+.problemCode
+{
+    height: 700px;
+}
 
 /* strong and em tags */
 strong
