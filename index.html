@@ -771,12 +771,30 @@
                     <!-- Tool:  Boolean Logic -->
                     <div class="col-lg-6 portfolio-item">
                             <div class="card h-100">
-                              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                              <div class="code">
+                                <strong>int</strong> userInput = 0;<br>
+                                <strong>int</strong> sum = 0;<br><br>
+                                std::cout << "Input a number: ";<br>
+                                std::cin >> userInput;<br><br>
+
+                                <strong>while</strong>(userInput > 0)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get the value of the last digit: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;sum = sum + (userInput%10);<br><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get rid of the last digit of user input: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;userInput = userInput/10;<br>
+                                }<br><br>
+                                std::cout << "The sum of the digits is: " << sum;
+                              </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#example2">Example</a>
+                                  <a href="#example2">Loops Example</a>
                                 </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+                                <p class="card-text">Write a program that takes an integer and prints the sum of its digits. Assume proper user input (user will give us an int that is not 0).</p>
+                                <hr>
+                                <p class="card-text">Sample output: </p>
+                                Input a number: 337<br>
+                                The sum of the digits is: 13
                               </div>
                             </div>
                     </div>
