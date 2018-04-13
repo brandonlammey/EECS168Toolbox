@@ -560,7 +560,7 @@
                               <img class="card-img-top" src="graphics/arrays1.png" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Create Stack Array + Array Pointers</h5>
-                                <p class="card-text">
+                                <p class="card-text" id = "code">
 
                                     <strong>int</strong> stackArr [ 3 ];<br>
                                     <strong>int</strong>* heapArr = <strong>nullptr</strong>;<br>
@@ -574,7 +574,7 @@
                               <img class="card-img-top" src="graphics/arrays2.png" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Create Heap Arrays</h5>
-                                <p class="card-text">
+                                <p class="card-text" id= "code">
                                     stackArr[1] = 7;<br><br>
 
                                     heapArr = <strong>new</strong> <strong>int</strong>[3];<br>
@@ -592,7 +592,7 @@
                               <img class="card-img-top" src="graphics/arrays3.png" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Delete Heap Arrays</h5>
-                                <p class="card-text">
+                                <p class="card-text" id= "code">
                                     <strong>delete</strong>[] heapArr; <br><br>
 
                                     <strong>for</strong>(<strong>int</strong> i = 0; i < 3; ++i)<br>
@@ -623,7 +623,7 @@
                             <img class="card-img-top" src="graphics/func0.png" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Pass By Value (With Return Type)</h5>
-                              <p class="card-text">
+                              <p class="card-text" id="code">
 
                                   <strong>int</strong> multiply (<strong>int</strong> n, <strong>int</strong> m)<br>
                                   {<br>
@@ -645,7 +645,7 @@
                             <img class="card-img-top" src="graphics/func1.png" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Pass By Reference (With No Return)</h5>
-                              <p class="card-text">
+                              <p class="card-text" id="code">
                                   <strong>void</strong> modify (<strong>int</strong> &n)<br>
                                   {<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;n = 7;<br>
@@ -664,10 +664,18 @@
                             <img class="card-img-top" src="graphics/func2.png" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Pass By Reference: Arrays </h5>
-                              <p class="card-text">
+                              <p class="card-text" id="code">
                                   
-                                  <strong>void</strong> zeroArr (<strong>int</strong> myArr, <strong>int</strong> size)<br>
+                                  <strong>void</strong> zeroArr (<strong>int</strong> myArr[], <strong>int</strong> size)<br>
                                   {<br>
+                                    
+                                    <em>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;/*<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;dataType* VS dataType[]<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;int* is an int pointer, and pointers can be changed to point to other things<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;int[] cannot be made to refer (point) to anything else<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+                                    </em>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i; i < size; i++)<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;myArr[i] = 0;<br>
                                   }<br>
@@ -676,6 +684,14 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> size = 3;<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* arrPtr = <strong>nullptr</strong>;<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;arrPtr = <strong>new</strong> <strong>int</strong>[size];<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;zeroArr(arrPtr, size);<br>
+                                    
+                                    <em>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;/* once zeroArr is complete<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;it is popped off the stack<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;remember to free memory<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;at the end of your program */<br>
+                                  </em>
                                   }<br>
                                   
                               </p>
@@ -791,7 +807,7 @@
                               <div class="code problemCode">
                                 <strong>if</strong>((cond1 == 3 && cond2 != "True") || !cond3)<br>
                                 {<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>((cond1 mod 3) == cond4)<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>((cond1 % 3) == cond4)<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Pancake";<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;}<br>
@@ -842,9 +858,9 @@
                     </div>
 
                     <!-- Tool:  Boolean Logic -->
-                    <div class="col-lg-6 portfolio-item">
+                    <div class="col-lg-12 portfolio-item">
                             <div class="card h-100">
-                              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                              <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
                               <div class="card-body">
                                 <h4 class="card-title">
                                   <a href="#problem2">Problem</a>

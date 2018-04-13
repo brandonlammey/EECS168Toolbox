@@ -65,7 +65,12 @@ margin-bottom: 0.5%;
 }
 .problemCode
 {
-    height: 700px;
+    height: 250px;
+}
+#code
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
 }
 
 /* strong and em tags */
