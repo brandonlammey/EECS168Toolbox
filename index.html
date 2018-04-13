@@ -722,23 +722,20 @@
                     <div class="col-lg-6 portfolio-item">
                             <div class="card h-100">
                               <div class="code">
-                                <strong>int</strong> main()<br>
+                                <strong>double</strong> userNum = 0.0;<br>
+                                <strong>int</strong> checkNum = 0;<br><br>
+                                std::cout << "Choose a number to be rounded: "; <br>
+                                std::cin >> userNum;<br><br>
+                                <em>/* Obtain the integer portion of the given number: */</em><br>
+                                checkNum = userNum;<br><br>
+                                <strong>if</strong> ((userNum + 0.5) >= (checkNum + 1))<br>
                                 {<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>double</strong> userNum = 0.0;<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> checkNum = 0;<br><br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Choose a number to be rounded: "; <br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cin >> userNum;<br><br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Obtain the integer portion of the given number: */</em><br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cin >> userNum;<br><br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> ((userNum + 0.5) >= (checkNum + 1))<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "The rounded number is " << (checkNum+1) << '\n';<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "The rounded number is " << (checkNum) << '\n';<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                }
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "The rounded number is " << (checkNum+1) << '\n';<br>
+                                }<br>
+                                <strong>else</strong><br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "The rounded number is " << (checkNum) << '\n';<br>
+                                }<br>
                               </div>
                               <div class="card-body">
 
