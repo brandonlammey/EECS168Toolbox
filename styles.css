@@ -61,8 +61,17 @@ margin-bottom: 0.5%;
     font-weight: 400;
 
     scrollbar-base-color:#BCCCD4;
-
 }
+
+.scrollable
+{
+    height:250px;
+    width:100%;
+    padding:10px;
+    overflow:auto;
+    scrollbar-base-color:#BCCCD4;
+}
+
 .problemCode
 {
     height: 250px;
