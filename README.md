@@ -13,3 +13,8 @@ Basic solved examples implementing tools given in the toolbox.
 
 ## Practice Problems
 Problems given for the purpose of test prep. No solution is provided in order to allow students to think through given problem and refer any question to class staff (Professor, GTA, SI Leader, UGTF)
+
+## Authors
+
+* **Brandon Lammey** - [brandonlammey](https://github.com/brandonlammey)
+* **Giovanni Artavia** - [Giovaartavia](https://github.com/Giovaartavia)
