@@ -94,7 +94,7 @@
                         <div class="card-body">
 
                           <h4 class="card-title">
-                            <a href="#dataTypes" data-toggle="collapse">Data Types / Operators</a>
+                            <a href="#dataTypes" data-toggle="collapse" id="linkHeader">Data Types / Operators</a>
                           </h4>
                           <div id="dataTypes" class="collapse">
                             <p class="card-text">Data types are classifications given to variables that describe what operations can be applied to them.</p>
@@ -132,7 +132,7 @@
 
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#boolLogic" data-toggle="collapse">Boolean Logic</a>
+                            <a href="#boolLogic" data-toggle="collapse" id="linkHeader">Boolean Logic</a>
                           </h4>
                             <div id="boolLogic" class="collapse">
                                 <ul class="card-text">
@@ -195,7 +195,7 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#ifElse" data-toggle="collapse">If / Else-If / Else</a>
+                            <a href="#ifElse" data-toggle="collapse" id="linkHeader">If / Else-If / Else</a>
                           </h4>
                           <div id="ifElse" class="collapse">
                               <p class="card-text">
@@ -252,7 +252,7 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#loops" data-toggle="collapse">Loops: While / Do-While / For</a>
+                            <a href="#loops" data-toggle="collapse" id="linkHeader">Loops: While / Do-While / For</a>
                           </h4>
                           <div id="loops" class="collapse">
                             <p class="card-text">
@@ -291,7 +291,7 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#1DArrays" data-toggle="collapse"> 1-D Arrays </a>
+                            <a href="#1DArrays" data-toggle="collapse" id="linkHeader"> 1-D Arrays </a>
                           </h4>
                           <div id="1DArrays" class="collapse">
                             <p class="card-text">
@@ -346,7 +346,7 @@
                               </div>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#multiDimArrays" data-toggle="collapse">Multi-Dimensional Arrays</a>
+                            <a href="#multiDimArrays" data-toggle="collapse" id="linkHeader">Multi-Dimensional Arrays</a>
                           </h4>
                           <div id="multiDimArrays" class="collapse">
                               <p class="card-text">
@@ -371,7 +371,7 @@
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
-                        <a href="#voidFunctions" data-toggle="collapse">Void Functions</a>
+                        <a href="#voidFunctions" data-toggle="collapse" id="linkHeader">Void Functions</a>
                       </h4>
                       <div id="voidFunctions" class="collapse">
                         <p class="card-text"> 
@@ -414,7 +414,7 @@
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
-                        <a href="#typeFunctions" data-toggle="collapse">Type Functions</a>
+                        <a href="#typeFunctions" data-toggle="collapse" id="linkHeader">Type Functions</a>
                       </h4>
                       <div id="typeFunctions" class="collapse">
                         <p class="card-text"> 
@@ -464,7 +464,7 @@
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
-                        <a href="#classHeader" data-toggle="collapse">Class Header (.h)</a>
+                        <a href="#classHeader" data-toggle="collapse" id="linkHeader">Class Header (.h)</a>
                       </h4>
                       <div id="classHeader" class="collapse">
                         <p class="card-text"> 
@@ -513,18 +513,38 @@
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
-                        <a href="#classDefinition" data-toggle="collapse">Class Definition (.cpp)</a>
+                        <a href="#classDefinition" data-toggle="collapse" id="linkHeader">Class Definition (.cpp)</a>
                       </h4>
                       <div id="classDefinition" class="collapse">
                         <p class="card-text"> 
                             The member function definitions for a class are stored in a separate .cpp file, which is called the class implementation file. 
                             The file usually has the same name as the class, with the .cpp extension.
-
+                            <br><br>
+                            Constructor: <br>
+                            <ul>
+                              <li>Constructor has same name as the class itself</li>
+                              <li>Constructors don’t have return type</li>
+                              <li>A constructor is automatically called when an object is created</li>
+                              <li>If we do not specify a constructor, C++ compiler generates a default constructor for us (expects no parameters and has an empty body)</li>
+                              <li>Constructor Overloading is possible by having multiple constructors which are parameterized differently (pass arguments to a constructor)</li>
+                            </ul>
+                            Destructor: <br>
+                            <ul>
+                                <li>Destructors have same name as the class preceded by a tilde (~)</li>
+                                <li>Destructors don’t take any argument and don’t return anything</li>
+                                <li>There can only one destructor in a class with classname preceded by ~</li>
+                                <li>If we do not write our own destructor in a class, compiler creates a default destructor for us</li>
+                                <li>When a class contains a pointer to memory allocated in class, we should write a destructor to release memory before the class instance is destroyed</li>
+                                <li>A destructor function is called automatically when the object goes out of scope: the function ends, the program ends, a block containing local variables ends, or a delete operator is called </li>
+                              </ul>
+                            <br>
                             NOTE:
                             The advanages of storing class definition in separate file are
-                            The class is reusable
-                            The clients of the class know what member functions the class provides, how to call them and what return types to expect
-                            The clients do not know how the class's member functions are implemented.
+                            <ul>
+                            <li>The class is reusable</li>
+                            <li>The clients of the class know what member functions the class provides, how to call them and what return types to expect</li>
+                            <li>The clients do not know how the class's member functions are implemented.</li>
+                            </ul>
                         </p>
                       </div>
                     </div>
@@ -552,7 +572,7 @@
                       <div class="card-body">
 
                         <h4 class="card-title">
-                            <a href="#memAllocArr">Memory Allocation Diagram: Arrays</a>
+                            <a href="#memAllocArr" id="linkHeader">Memory Allocation Diagram: Arrays</a>
                         </h4>
 
                         <div class="card-group">
@@ -615,7 +635,7 @@
                   <div class="card-body">
 
                       <h4 class="card-title">
-                          <a href="#memAllocFunc">Memory Allocation Diagram: Functions</a>
+                          <a href="#memAllocFunc" id="linkHeader">Memory Allocation Diagram: Functions</a>
                       </h4>
 
                       <div class="card-group">
@@ -706,15 +726,182 @@
 
               <!-- Concepts: Classes -->
               <div class="col-lg-12 portfolio-item">
-                      <div class="card h-100">
-                        <a href="#"><img class="card-img-top" id="classes" src="graphics/obj.png" alt=""></a>
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#classesVisualization">Classes (Visualization)</a>
-                          </h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
-                        </div>
+                <div class="card h-100">
+                  <a href="#"><img class="card-img-top" id="classes" src="graphics/obj.png" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="#classesVisualization" id="linkHeader">Classes (Visualization)</a>
+                    </h4>
+                    <!-- <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.
+                    </p> -->
+                    <div class="row">
+                      <div class="col-lg-4 portfolio-item">
+                        <h5>main.cpp</h5>
+                        <p class="card-text scrollable" id="code">        
+                          <strong>#include</strong> < iostream > <br>
+                          <strong>#include</strong><"dog.h"> <br>
+                          <br>
+                          <strong>int</strong> main()<br>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::string breed;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::string name;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> age;<br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> arrSize;<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//cin appropriate parameters</em><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;dog stackDog(breed, name, age);<br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//cin appropriate parameters</em><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;dog* dogPtr = <strong>new</strong> dog(breed, name, age);<br>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;dog* dogArrPtr = <strong>new</strong> dog[arrSize];<br><br>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//for a dynically allocated (heap) array of dog pointers</em> <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//dog** dogArrPtr = new dog*[arrSize];</em><br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i++; i< arrSize)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <em>//cin appropriate parameters</em><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i].setBreed(breed);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i].setName(name);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i].setAge(age);<br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <em>//can be done this way as well</em><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <em>// dogArrPtr[i] = dog(breed, name, age);</em><br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <em>/*<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  for a dynically allocated (heap) array of dog pointers <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  each index points to a new dog object<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  function calls require "->" notation<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i] = new dog();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i] -> setBreed(breed);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i] -> setName(name);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  dogArrPtr[i] -> setAge(age);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  */<br></em>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//memory visualization at this point</em><br><br>
+                            <em>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//remember to free memory at the end<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//stackDog does not require a manual delete<br>
+                            </em>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete</strong> dogPtr; <em>//dont use [] since we are deleting an object not an array</em><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete[]</strong> dogArrPtr; <br><br>
+
+                            <em>
+                            /*<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;for a dynically allocated (heap) array of dog pointers <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i< arrSize; i++)<br></arrSize>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//deleting objects not arrays so do not use []<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete dogArrPtr[i]; //deletes dogs<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;delete[] dogArrPtr; //deletes array<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+                            </em>
+                          
+                          } <br>
+                        </p>
+
                       </div>
+                      <div class="col-lg-4 portfolio-item">
+                        <h5>dog.h</h5>
+                          <p class="card-text scrollable" id="code">
+
+                              <strong>#ifndef</strong> DOG_H	<br>				
+                              <strong>#define</strong> DOG_H<br>
+                              <br>
+                              class dog<br>
+                              {<br>
+                                  <strong>private:</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//private member variables</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string m_breed;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string m_name;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_age;<br>
+                                  <br>
+                                  <strong>public:</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//default constructor</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;dog();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//paramaterized constructor</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;dog(std::string breed, std::string name, <strong>int</strong> age);<br><br>
+                                      <em>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;/*<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;Define a deconstructor if object allocates memory 
+                                          that cannot be accessed outside of the object<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;~dog()<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                          <br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;*/<br><br>
+                                      </em>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<em>//set functions for private member variables</em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setBreed(std::string breed);<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setName(std::string name);<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setAge(<strong>int</strong> age);<br>
+                                      <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<em>//get functions for private member variables</em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;std::string getBreed();<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;std::string getName();<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> getAge();<br>
+                              };<br>
+                              <strong>#endif</strong><br>
+
+
+                          </p>
+                      </div>
+                      <div class="col-lg-4 portfolio-item">
+                          <h5>dog.cpp</h5>
+                          <p class="card-text scrollable" id="code">
+
+                              <strong>#include</strong> "dog.h"<br><br>
+                              
+                              dog::dog()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_age = 0;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_name = "";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_breed = "";<br>
+                              }<br>
+                              dog::dog(std::string breed, std::string name, int age)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_age = age;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_name = name;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    m_breed = breed;<br>
+                              }<br>
+                              
+                              <strong>void</strong> dog::setBreed(std::string breed)<br>
+                              {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;    m_breed = breed;<br>
+                              }<br>
+                              <strong>void</strong> dog::setName(std::string name)<br>
+                              {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;    m_name = name;<br>
+                              }<br>
+                              <strong>void</strong> dog::setAge(<strong>int</strong> age)<br>
+                              {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;   m_age = age;<br>
+                              }<br>
+                              
+                              std::string dog::getBreed()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    <strong>return</strong>(m_breed);<br>
+                              }<br>
+                              std::string dog::getName()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    <strong>return</strong>(m_name);<br>
+                              }<br>
+                              <strong>int</strong> dog::getAge()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    <strong>return</strong>(m_age);<br>
+                              }<br>
+
+                          </p>
+                      </div>
+                  </div>
+                  </div>
+                </div>
               </div>
 
               
@@ -756,7 +943,7 @@
                               <div class="card-body">
 
                                 <h4 class="card-title">
-                                  <a href="#example1">Data Types and If-Else Example</a>
+                                  <a href="#example1" id="linkHeader">Data Types and If-Else Example</a>
                                 </h4>
                                 <p class="card-text">Write a program that takes a double from the user and rounds the number.</p>
                                 <ul class="card-text">
@@ -788,7 +975,7 @@
                               </div>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#example2">Loops Example</a>
+                                  <a href="#example2" id="linkHeader">Loops Example</a>
                                 </h4>
                                 <p class="card-text">Write a program that takes an integer and prints the sum of its digits. Assume proper user input (user will give us an int that is not 0).</p>
                                 <hr>
@@ -816,7 +1003,7 @@
                             <h1 class="my-4"><small>Practice Problems</small></h1>
                     </div>
 
-                    <!-- Tool: Data Types / Operators -->
+                    <!-- Practice Problem: 1 -->
                     <div class="col-lg-12 portfolio-item">
                             <div class="card h-100">
                               <div class="code problemCode">
@@ -858,7 +1045,7 @@
                               <div class="card-body">
 
                                 <h4 class="card-title">
-                                  <a href="#problem1">Problem 1: Data Types and If-Else</a>
+                                  <a href="#problem1" id="linkHeader">Problem 1: Data Types and If-Else</a>
                                 </h4>
                                 <p class="card-text">What will be the output of this block of code if:</p>
                                 <ul class="card-text">
@@ -872,15 +1059,19 @@
                             </div>
                     </div>
 
-                    <!-- Tool:  Boolean Logic -->
+                    <!-- Practice Problem: 2 -->
                     <div class="col-lg-12 portfolio-item">
                             <div class="card h-100">
                               <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#problem2">Problem</a>
+                                  <a href="#problem2" id="linkHeader">Problem</a>
                                 </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+                                <p class="card-text">
+
+                                  More practice problems coming soon...
+
+                                </p>
                               </div>
                             </div>
                     </div>
@@ -912,36 +1103,3 @@
 
   </body>
 </html>
-<!-- 
-#include<all other includes>
-#include<"dog.h">
-
-main()
-{
-  std::string breed;
-  std::string name;
-  int age;
-
-  int arrSize;
-
-  //cin appropriate parameters
-
-  dog stackDog(breed, name, age);
-
-  //cin appropriate parameters
-
-  dog* dogPtr = new dog(breed, name, age);
-  
-  dog* dogArrPtr = new dog[arrSize];
-  
-  for(int i = 0; i++; i< arrSize)
-  {
-    //cin appropriate parameters
-    dogArrPtr[i] -> setBreed(breed);
-    dogArrPtr[i] -> setName(name);
-    dogArrPtr[i] -> setAge(age);
-  }
-
-} 
-
--->
