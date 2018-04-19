@@ -1105,7 +1105,7 @@
 
                               Working in a bakery, you have a list of different pastries, their inventory counts, and with pastries divided into groups based on type. 
                               You want to create a file containing the amount of pastries of each type and print it out for customers. 
-                              Additionally you want to check the inventory and see which pastries are running low on stock. <br>
+                              Additionally you want to check the inventory and see which pastries are running low on stock. <br><br>
 
                               Write a program that includes a "pastry" class (pastry.h). This class has the following private members (along with their set and get functions): 
                               m_type, m_name, m_stock. <br><br>
@@ -1126,8 +1126,8 @@
                               </ul>
 
                               <br>
-                              File Format: <br>
-                              < number of files ><br>
+                              File Format: <br><br>
+                              < number of lines ><br>
                               < pastryType > < PastryName > < PastryCount ><br>
                               .<br>
                               .<br>
@@ -1160,21 +1160,24 @@
                               int m_assignmentLength,
                               bool m_isCurved
                               <br><br>
+
                               The class should include:
                               <ul>
                                 <li>default constructor to set all private members to their appropriate default values (0, nullptr, or false)</li> 
                                 <li>paramaterized constructor which will take four parameters: file with solutions, file with assignment, bool isCurved, int assignmentLength</li> 
                                 <li>set and get methods for all private members (set pointers will take a file as a formal parameter and use the values to create a dynamically allocated array)</li> 
                                 <li>grader method which returns the final score (taking curve into account) and assumes both arrays are of length equal to m_assignmentLength </li> 
-                                <li>destructor if necessary</li> 
+                                <li>destructor if necessary</li>
                               </ul>
-                              Assumptions: 
+                              
+                              Assumptions:<br><br>
+
                               <ul>
                                 <li>all problems are equally weighted</li> 
                                 <li>curve formula: curvedScore = 75 + ((50 - 75)/(40 - 70)) * (nonCurvedScore-70)</li> 
                                 <li>files have equal amount of values with solutions seperated with a space <br>
                                   (exampleSolution: 13.5 3.8 9.456 10.8) (exampleAssignment: 13.5 3.8 9.456 19)
-                                 </li> 
+                                </li> 
                               </ul>
                             
                             </p>
