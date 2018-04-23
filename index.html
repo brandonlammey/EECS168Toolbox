@@ -959,6 +959,9 @@
                     <div class="col-lg-6 portfolio-item">
                             <div class="card h-100">
                               <div class="code">
+
+                                <!-- Code with while loop -->
+                                <em>/* With a while loop: */</em><br>
                                 <strong>int</strong> userInput = 0;<br>
                                 <strong>int</strong> sum = 0;<br><br>
                                 std::cout << "Input a number: ";<br>
@@ -971,7 +974,48 @@
                                   &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get rid of the last digit of user input: */</em><br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;userInput = userInput/10;<br>
                                 }<br><br>
-                                std::cout << "The sum of the digits is: " << sum;
+                                std::cout << "The sum of the digits is: " << sum;<br><br>
+
+                                <em>/////////////////////////////////////////////////////</em><br><br>
+
+                                <!-- Code with for loop -->
+                                <em>/* With a for loop: */</em><br>
+                                <strong>int</strong> userInput = 0;<br>
+                                <strong>int</strong> sum = 0;<br>
+                                <strong>int</strong> count = 0;<br><br>
+                                std::cout << "Input a number: ";<br>
+                                std::cin >> userInput;<br><br>
+                                <em>/*Get number of digits in given number*/</em><br>
+                                <strong>for</strong> (int i = userInput; i > 0; i--)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+                                }<br><br>
+                                <strong>for</strong> (int j = 0; j < count; j++)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get the value of the last digit and add it to total: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;sum = sum + (userInput%10);<br><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get rid of the last digit of user input: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;userInput = userInput/10;<br>
+                                }<br><br>
+                                std::cout << "The sum of the digits is: " << sum;<br><br>
+                                
+                                <em>/////////////////////////////////////////////////////</em><br><br>
+
+                                <!-- Code with do-while loop -->
+                                <em>/* With a do while loop: */</em><br>
+                                <strong>int</strong> userInput = 0;<br>
+                                <strong>int</strong> sum = 0;<br><br>
+                                std::cout << "Input a number: ";<br>
+                                std::cin >> userInput;<br><br>
+
+                                <strong>do</strong><br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get the value of the last digit and add it to total: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;sum = sum + (userInput%10);<br><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Get rid of the last digit of user input: */</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;userInput = userInput/10;<br>
+                                } <strong>while</strong>(userInput > 0)<br><br>
+                                std::cout << "The sum of the digits is: " << sum;<br><br>
                               </div>
                               <div class="card-body">
                                 <h4 class="card-title">
@@ -986,8 +1030,96 @@
                             </div>
                     </div>
 
-                    
+                    <div class="col-lg-6 portfolio-item">
+                      <div class="card h-100">
+                        <div class="code">
+                            <strong>int</strong> length = 0;<br>
+                            <strong>int</strong> value = 0;<br><br>
+                        
+                            std::cout << "What is the length of the 2-D array?";<br>
+                            std::cout << '\n';<br>
+                            std::cin >> length;<br><br>
+                        
+                            <strong>int</strong>** arr = <strong>new int</strong>*[length];<br>
+                            <strong>int</strong> leftToRighArr[length];<br>
+                            <strong>int</strong> rightToLeftArr[length];<br><br>
+                        
+                            <em>/*Create an array of pointers*/</em><br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br></length>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;arr[i] = <strong>new</strong> int[length];<br>
+                            }<br><br>
+                        
+                            <em>/*Fill in 2-D array*/</em><br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br></length>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> j = 0; j < length; j++)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Input value for " << i << ", " << j << ": ";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cin >> value;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i][j] = value;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            }<br><br>
+                        
+                            <!-- //Create heap allocated array: -->
+                        
+                            <em>Set diagonals to 1-D arrays</em><br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong>> j = 0; j < length; j++)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(i == j)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftToRighArr[i] = arr[i][j];<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(i+j == length-1)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightToLeftArr[i] = arr[i][j];<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            }<br><br>
+                        
+                            <em>/*Print the two 1-D arrays:*/</em><br>
+                            std::cout << "Left to right diagonal array: \n";<br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;std::cout << leftToRighArr[i] << " ";<br>
+                            }<br>
+                            std::cout << '\n';<br><br>
+                        
+                            std::cout << "Right to left diagonal array: \n";<br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;std::cout << rightToLeftArr[i] << " ";<br>
+                            }<br>
+                            std::cout << '\n';<br><br>
+                        
+                            <em>/*Free memory from heap allocated 2-D array*/</em><br>
+                            <strong>for</strong>(<strong>int</strong> i = 0; i < length; i++)<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Delete array of pointers*/</em><br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete[]</strong> arr[i];<br>
+                            }<br>
+                            <strong>delete[]</strong> arr;
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            <a href="#example3" id="linkHeader">Arrays Example</a>
+                          </h4>
+                          <p class="card-text">Allow the user to populate a heap allocated 2-D array of integers where the length of the array is equal to the height. The user is allowed to choose the length of the array. Then, obtain the values from the left to right diagonal and put them into a stack allocated 1-D array. Do the same with the elements from the right to left diagonal. Print both of these arrays.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 portfolio-item">
+                      <div class="card h-100">
+                        <div class="code">
 
+                        </div>
+                        <div class="card-body">
+                          
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
     </section>
