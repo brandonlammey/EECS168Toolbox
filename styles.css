@@ -63,6 +63,22 @@ margin-bottom: 0.5%;
     scrollbar-base-color:#BCCCD4;
 }
 
+.codeInverted
+{
+    height:250px;
+    width:100%;
+    padding:10px;
+
+    background-color:#BDC2C6;
+
+    overflow:auto;
+    color: #55606F;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+
+    scrollbar-base-color:#55606F;
+}
+
 .scrollable
 {
     height:250px;
