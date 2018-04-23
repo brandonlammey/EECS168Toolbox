@@ -1355,7 +1355,7 @@
     <strong>int</strong> num = 3;<br>
     <strong>int</strong>* countdown = <strong>new</strong> <strong>int</strong>[num];<br>
     <br>
-    while(num != 0)<br>
+    <strong>while</strong>(num != 0)<br>
     {<br>
       num = num - 1;<br>
       countdown[num] = (num + 1);<br>
@@ -1363,85 +1363,84 @@
     <br>
     std::cout << "Deleting Array: " << '\n';<br>
     <br>
-    //E
+    <em>//E</em>
     <br>
     num = 2;<br>
-    do<br>
+    <strong>do</strong><br>
     {<br>
       std::cout << countdown[num] << " ";<br>
       num = num - 1;<br>
-    }<br>
-    while(num >= 0);<br>
+    }<strong>while</strong>(num >= 0);<br>
 
   }<br><br>
-  void deleteArr(double** tempArr, int size)<br>
+  <strong>void</strong> deleteArr(<strong>double</strong>** tempArr, <strong>int</strong> size)<br>
   {<br>
     int numOne = size;<br>
-    for(int i = 0; i < numOne; ++i)<br></numOne>
-      delete[] tempArr[i];<br>
+    <strong>for</strong>(<strong>int</strong> i = 0; i < numOne; ++i)<br></numOne>
+      <strong>delete[]</strong> tempArr[i];<br>
       <br>
     deleteMsg();<br>
-    delete[] arrName;<br>
+    <strong>delete[]</strong> arrName;<br>
 
   }<br><br>
-  bool setArr(double** newArr, int size)<br>
+  <strong>bool</strong> setArr(<strong>double</strong>** newArr, <strong>int</strong> size)<br>
   {<br>
-    for(int i = 0; i < size; i++)<br>
+    <strong>for</strong>(<strong>int</strong> i = 0; i < size; i++)<br>
     {<br>
-      for(int j = 0; j< size; j++)<br>
+      <strong>for</strong>(<strong>int</strong> j = 0; j< size; j++)<br>
       {<br>
         newArr[i][j] = 1.0;<br>
       }<br>
     }<br>
-    return(true);<br>
+    <strong>return</strong>(<strong>true</strong>);<br>
   }<br><br>
 
-  int numChange(&int a, int b)<br>
+  <strong>int</strong> numChange(<strong>&int</strong> a, <strong>int</strong> b)<br>
   {<br>
-    for(int i = 0; i < b; i++)<br></b>
+    <strong>for</strong>(<strong>int</strong> i = 0; i < b; i++)<br></b>
     {<br>
-      int x = i * i;<br>
+      <strong>int</strong> x = i * i;<br>
       a = a + i;<br>
     }<br>
     b = a * b;<br>
     <br>
-    //A: at this point<br>
+    <em>//A: at this point</em><br>
     <br>
-    return(b);<br>
+    <strong>return</strong>(b);<br>
   }<br><br>
 
-  double** arrMaker(int size)<br>
+  <strong>double</strong>** arrMaker(<strong>int</strong> size)<br>
   {<br>
     std::cout << "Creating Array" << '\n';<br>
-    double** newArr = new double*[size];<br>
+    <strong>double</strong>** newArr = <strong>new double</strong>*[size];<br>
     <br>
-    //C<br>
+    <em>//C</em><br>
     <br>
-    for(int i = 0; i < size; ++i)<br></size>
-      newArr[i] = new double[size];<br><br>
+    <strong>for</strong>(<strong>int</strong> i = 0; i < size; ++i)<br></size>
+      newArr[i] = <strong>new double</strong>[size];<br><br>
     return(newArr);<br>
   }<br><br>
 
-  int main()<br>
+  <strong>int</strong> main()<br>
   {<br>
-    int numOne = 2;<br>
-    int numTwo = 4;<br>
-    int numThree = 6;<br>
-    double** arrPtrOne = nullptr;<br>
+    <strong>int</strong> numOne = 2;<br>
+    <strong>int</strong> numTwo = 4;<br>
+    <strong>int</strong> numThree = 6;<br>
+    <strong>double</strong>** arrPtrOne = <strong>nullptr</strong>;<br>
     <br>
-    int finalNum = numChange(numOne, numTwo); //A: on this function call<br>
+    <strong>int</strong> finalNum = numChange(numOne, numTwo); //A: on this function call<br>
     
-    while(finalNum != 16)<br>
+    <strong>while</strong>(finalNum != 16)<br>
     {<br>
       finalNum = numChange(numThree, numOne);<br>
     }<br><br>
-    //B<br>
+    <em>//B</em><br>
     <br>
     arrPtrOne = arrMaker(numOne);<br>
     arrPtrTwo[numThree]; <br>
 
     setArr(arrPtrOne, numOne);<br><br>
-    //D<br>
+    <em>//D</em><br>
     <br>
     deleteArr(arrPtrOne, numOne);<br>
     

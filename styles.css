@@ -78,6 +78,16 @@ margin-bottom: 0.5%;
 
     scrollbar-base-color:#55606F;
 }
+.codeInverted em
+{
+    color: #5b8c58;
+    font-weight: 600;
+}
+.codeInverted strong
+{
+    color: #6CC3E8;
+    font-weight: 600;
+}
 
 .scrollable
 {
