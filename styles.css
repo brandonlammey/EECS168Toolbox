@@ -127,7 +127,7 @@ em{
     padding: 9% 0 2% 0;
     text-align: center;
     color: #55606F;
-    background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+    /* background: url("../img/intro-bg.jpg") no-repeat bottom center scroll; */
     background-color: #FCFCFB;
     -webkit-background-size: cover;
     -moz-background-size: cover;
