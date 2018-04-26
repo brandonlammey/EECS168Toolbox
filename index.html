@@ -1511,20 +1511,168 @@
 
                     <!-- Practice Problem: Memory 2-->
                     <div class="col-lg-12 portfolio-item">
-                        <div class="card h-100">
-                          <div class="codeInverted">
-                            <!-- Begin Code -->
-
-                            <!-- End code -->
-                          </div>
+                    <div class="card h-100">
                           
+
+                            <div id="container">
+
+                                <div id="box1">
+                                    <div class="codeInverted">
+                                  <em>/*main.cpp*/</em><br>
+                                  <strong>#include</strong><"dragon.h"> <br>
+                                  <strong>int</strong> main()<br>
+                                  {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//create some dragons</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;dragon d1("Balthasar", "Emerald", 13, true);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;dragon d2;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;dragon* d3 = <strong>new</strong> dragon;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;dragon d4();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;dragon** d5 = <strong>new</strong> *dragon[3]; <br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//A</em><br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i=0; i < 3 ; i++)<br></3>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  d5[i] = <strong>new</strong> dragon;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//B</em><br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d2.setName("Karen");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d2.setColor("Midnight Sky");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d2.setTeethAmount(100);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d2.setFireBreathe(<strong>true</strong>);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d3.setName("Panther");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d3.setColor("Marmalade");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d3.setTeethAmount(2);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d3.setFireBreathe(<strong>false</strong>);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d4.m_name = "Lenjamin";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d4.m_scaleColor = "Peruvian Sunrise";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d4.m_numTeeth = 777; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d4.m_breathesFire = <strong>true</strong>; <br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[0] -> setName("Marthus Rocklyn III");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[0] -> setColor("Coral");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[0] -> setTeethAmount(50);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[0] -> setFireBreathe(<strong>true</strong>);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[1] -> setName("Raymundo Rocket");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[1] -> setColor("Honeysuckle Blast");<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[1] -> setTeethAmount(100);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;d5[1] -> setFireBreathe(<strong>false</strong>);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* getTreasure = <strong>nullptr</strong>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> treasureAmount = 0;<br>
+                                    <br>
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>( (d5[1]->getTeethAmount()) == d2.getTeethAmount() )<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//C: if executed memory at marked location else memory after block</em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(d5[1]->dangerLevel(5) > d2.dangerLevel(5))<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//C: if executed the memory at the end of dragonTreasure() before return</em><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getTreasure = d5[1]-> dragonTreasure(3); <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getTreasure[3] = 5;<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//C: if executed the memory at the end of dragonTreasure() before return</em><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getTreasure = d2.dragonTreasure(3);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getTreasure[3] = 10;<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;treaureAmount = getTreasure[0] + getTreasure[1] + getTreasure[2];<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//C: if executed the memory at the end of dragonTreasure() before return</em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getTreasure = d3->dragonTreasure(3); <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;treaureAmount = getTreasure[0] + getTreasure[1] + getTreasure[2];<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//D</em><br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete[]</strong> d3;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete[]</strong> d5;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete[]</strong> getTreasure;<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//E</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(0);<br>
+                                    
+                                  }
+
+                                </div>
+                                </div>
+
+                                <div id="box2">
+                                    <div class="codeInverted">
+                                  <em>/*dragon.h*/</em><br>
+                                  #ifndef DRAGON_H<br>
+                                  #define DRAGON_H<br>
+                                  <br>
+                                  <strong>class</strong> dragon<br>
+                                  {<br>
+                                  <strong>private</strong>:<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//private member variables</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string m_name;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string m_scaleColor;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_numTeeth;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> m_breathesFire;<br>
+                                  <br>
+
+                                  <strong>public</strong>:<br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//set functions for private member variables</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setName(std::string name);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setColor(std::string scaleColor);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setTeethAmount(<strong>int</strong> numTeeth);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setFireBreathe(<strong>bool</strong> breathesFire);<br>
+                                  <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//get functions for private member variables</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string getName();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string getColor();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> getTeethAmount();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> getFireBreathe();<br>
+                                  <br>
+                                  <em>/*<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Paramaters: int curStrength<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Variables: int dangerLevel <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Return: int from 0-10 representing danger level<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Description: Uses private member variables and strength to determine dangerLevel<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;strenght determined by: <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;3pts: strength (1pt/10strength : any amound over 30 strength will only give 3 pts max )<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;3pts: teeth (1pt/10teeth : any amound over 30 teeth will only give 3 pts max )<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;4pts: flame<br>
+                                  */<br></em>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> dangerLevel(<strong>int</strong> curStrength);<br><br>
+                                  <em>
+                                  /*<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Paramaters: int size<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Variables: int* treasureChest <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Return: int* to an array from 0-size-1<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Description: Creates an int pointer and a dynmically allocated array <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;fills array using a for loop from first to last index starting with 2 and incrementing by 2<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;ex: if size = 3 then [2, 4, 6]<br>
+                                  */<br></em>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* dragonTreasure(<strong>int</strong> size);<br>
+                                  };<br>
+                                  #endif
+                                  </div>
+                                </div>
+                                
+                              </div>
+
+
                           <div class="card-body">
                             <h4 class="card-title">
                               <a href="#problem2" id="linkHeader">Problem (Memory Visualization 2): Basic Objects</a>
                             </h4>
                             <p class="card-text">
   
-                              Problem Coming Soon
+                                Determine and illustrate the memory at marked positions A, B, C, D, and E in the code. 
+                                Note any errors in code if they exist and do not illustrate error causing code in memory.
+                                Assume all class functions are defined correctly as descirbed in the comments. 
   
                             </p>
                           </div>
@@ -1602,3 +1750,4 @@
 
   </body>
 </html>
+

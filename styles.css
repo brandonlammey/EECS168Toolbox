@@ -89,6 +89,7 @@ margin-bottom: 0.5%;
     font-weight: 600;
 }
 
+
 .scrollable
 {
     height:250px;
@@ -159,4 +160,21 @@ em{
 #linkHeader:hover
 {
     color: #BDC2C6;
+}
+
+#container {
+    width:100%;
+}
+#box1	{
+    width:50%;
+    float: left;
+    
+}
+#box2 	{
+    width:50%;
+    float: left;
+    border-left-style: solid;
+    border-left-width: 1px;
+    
+    
 }
