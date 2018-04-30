@@ -1756,3 +1756,136 @@
   </body>
 </html>
 
+
+
+
+<!-- 
+  /* room.h */
+  class room {
+  private:
+    int m_length;
+    int m_width;
+    int m_height;
+  public : 
+    //Paramaters: int l, int w, int h
+    //Details: Sets m_length, m_width, m_height
+		void setRoom(int l, int w, int h);
+    
+    //prints out m_length, m_width, m_height in readable format
+		void printRoom();
+};
+/* address.h */
+class address {
+  private:
+    int m_houseNum;
+    std::string m_city;
+    std::string m_state;
+  public : 
+    //parameters: int houseNum, std::string city, std::string state
+    //sets m_houseNum, m_city, m_state using input parameters 
+    void setAddr(int houseNum, std::string city, std::string state);
+
+    //asks user for input and sets m_houseNum, m_city, m_state
+		void setAddr();
+    
+    //prints out m_houseNum, m_city, m_state in readable format
+		void printAddr();
+};
+
+/* house.h */
+class house{
+  private:
+	std::string m_houseName;
+  address m_addr;
+  int m_roomAmount; 
+  room* m_roomPtr;
+
+  public : 
+      //sets all variables to default values 
+      house();
+
+      /*
+      parameters: int rooms
+      details: Sets the m_roomPtr to an array holding room objects 
+      setAddr(int houseNum, std::string city, std::string state)
+      */
+      house(int rooms);
+
+      /*
+      parameters: int houseNum, std::string city, std::string state
+      details: Sets the address addr of a house by calling on 
+      setAddr(int houseNum, std::string city, std::string state)
+      */
+      house(int houseNum, std::string city, std::string state);
+
+      //copy constructor 
+      house( const house &myHouse);
+
+      //removes room array from the heap
+      ~house;
+
+      //Parameters: int roomAmount
+      //Details: sets m_roomAmount
+      void setRoomCount(int roomAmount);
+
+      Parameters: int length, int width, int height
+      Details: Calls on setRoom() to set a specified rooms dimensions 
+      void setRoomDim(int roomIndex, int length, int width, int height);
+
+      //Details: calls on setAddr() for m_addr
+      void setAddress();
+
+      //Paramaters: std::string name
+      //Details: sets m_houseName
+      void setHouseName(std::string name);
+
+
+      //Return: amount of rooms
+      int getRoomCount();
+
+      //Details: Calls on printRoom()
+      void getRoomDim();
+
+      //Details: calls on getAddr() for m_addr
+      void getAddress();
+
+      //Return: name of the house
+      std::string getHouseName();
+
+      //Prints: House name, address, and room info 
+      //Details: calls on m_addr.getAddr(), and getRoom()
+			void display();
+};
+
+/* main.cpp */
+
+std::string moreRooms(house a, house b)
+{
+  if(a.getRoomCount() > b.getRoomCount())
+  {
+    return(a.getHouseName())
+  }
+  else
+  {
+    return(b.getHouseName())
+  }
+}
+
+int check()
+{
+  int m_roomAmount = 3;
+  house aHouse(5);
+  return(m_roomAmount);
+}
+
+int main()
+{
+  house w;
+  house x(3);
+  house y(123, "Lawrence", "Kansas")
+  house* z = new house();
+
+  
+  
+	return 0;
+} -->
