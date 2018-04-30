@@ -1360,7 +1360,85 @@
                         <div class="card h-100">
                           <div class="code problemCode">
                           <!-- Begin Code -->
+                          <strong>int</strong> changeValuesFunc1(<strong>int</strong>* arr, <strong>int</strong> val, <strong>int</strong> size)<br>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < size; i++)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = i+1;<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val--;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(val + arr[3]);<br>
+                          }<br><br>
+                          
+                          <strong>void</strong> fillNewArr(<strong>int</strong>* arr, <strong>int</strong> size)<br>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < size; i++)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(arr[i] != 0)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = size;<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Here! \n";<br>
+                          }<br><br>
+                          
+                          <strong>void</strong> startNewArr(<strong>int</strong>* oldArr, <strong>int</strong>* newArr, <strong>int</strong>& val, <strong>int</strong> size)<br>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> tempVal = 0;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> count = 0;<br><br>
 
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>do</strong><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val = changeValuesFunc1(newArr, val, size);<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <strong>while</strong>(val >= tempVal);<br><br>
+                              
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Count: " << count << '\n';<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Val: " << val << '\n';<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;fillNewArr(newArr, size);<br>
+                          }<br><br>
+                          
+                          <stron>int</strong> main()<br>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> arrSize = 5;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> value1 = 10;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> changedValue = 0;<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* arr = nullptr;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;arr = <strong>new</strong> int[arrSize];<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Initialize all elements in array to 0 */</em><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < arrSize; i++)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = 0;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;changedValue = changeValuesFunc1(arr, value1, arrSize);<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* newArr = nullptr;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;newArr = <strong>new</strong> int[changedValue];<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>/* Initialize all elements in new array to 0 */</em><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < changedValue; i++)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr[i] = 0;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;startNewArr(arr, newArr, value1, changedValue);<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < arrSize; i++)<br></arrSize>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << arr[i] << ' ';<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;std::cout << '\n';<br><br>
+                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < changedValue; i++)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << newArr[i] << ' ';<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                          }
                           <!-- End code -->
                           </div>
                           <div class="card-body">
@@ -1449,7 +1527,7 @@
                               &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(true);<br>
                           }<br><br>
 
-                          <strong>int</strong> numChange(&<strong>int</strong> a, <strong>int</strong> b)<br>
+                          <strong>int</strong> numChange(<strong>int&</strong> a, <strong>int</strong> b)<br>
                           {<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < b; i++)<br></b>
                             &nbsp;&nbsp;&nbsp;&nbsp;{<br>
