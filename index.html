@@ -1448,7 +1448,7 @@
                             </h4>
                             <p class="card-text">
   
-                                What is the output of the above code>
+                                Determine the output of the code above.
     
                             </p>
                           </div>
@@ -1460,7 +1460,6 @@
                       <div class="card h-100">
                         <div class="code problemCode">
                         <!-- Begin Code -->
-                        <div class="container">
                           <div class="box1">
                             <div class="code">
                                 <em>/* main.cpp */</em><br><br>
@@ -1471,28 +1470,82 @@
                                   &nbsp;&nbsp;&nbsp;&nbsp;{<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(a.getHouseName());<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else if</strong>(a.getRoomCount() < b.getRoomCount())<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;{<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(b.getHouseName());<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>("SAME SIZE!");<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;} <br>
                                 }<br><br>
-                                
-                                <stong>int</stong> check()<br>
+
+                                <strong>int</strong> check()<br>
                                 {<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_roomAmount = 3;<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;house aHouse(5);<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(m_roomAmount);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "Check Complete." <<'\n';<br>
                                 }<br><br>
-                                
+
                                 <strong>int</strong> main()<br>
                                 {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> j;<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;house w;<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;house x(3);<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;house y(123, "Lawrence", "Kansas")<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house y(123, "Lawrence", "Kansas");<br>
                                   &nbsp;&nbsp;&nbsp;&nbsp;house* z = new house();<br><br>
-                                
+                               
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.setAddress();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//assume user inputs: 1234 Escondito California</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.setHouseName("Pepper");<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.setRoomCount(2);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.setRoomDim(0, 20, 20, 20);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.setRoomDim(1, 10, 10, 20);<br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;x.setAddress();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//assume user inputs: 3607 Screamer Alabama</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> size = x.getRoomCount();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i = 0; i < size; i++)<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.setRoomDim(i, 5, 5, 5);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;x.setRoomDim(0, 10, 10, 10);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;x.setHouseName("Miss Mittens");<br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;j = check();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << j << '\n';<br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;y.setHouseName("Tuna");<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;y.setRoomCount(w.getRoomCount());<br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> loop = 0; <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>while</strong>(loop < w.getRoomCount()) <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y.setRoomDim(loop, 8, 10, 12);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop++;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;td::cout << "Set room: " << y.getRoomDim(loop) << '\n';<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
                                   
-                                  
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << moreRooms(*z, y) << '\n';<br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;z->setHouseName("Moist");<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;z->setRoomCount(j);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(int i = 0; i < j; i++)<br></j>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z->setRoomDim(i, 13, 15, 20);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;z->setAddress();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//assume user inputs: 79312 Unalaska Alaska</em><br><br>
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;z->display();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;y.display();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;x.display();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;w.display();<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << moreRooms(y, x) << '\n';<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << check << '\n';<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::cout << "GOODBYE!";<br><br>
+
                                   &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong> 0;<br>
                                 }
                             </div>
@@ -1588,7 +1641,7 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> getRoomCount();<br><br>
                           
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: Calls on printRoom()</em><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> getRoomDim();<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> getRoomDim(<strong>int</strong> roomNum);<br><br>
                           
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on getAddr() for m_addr</em><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> getAddress();<br><br>
@@ -1596,13 +1649,12 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Return: name of the house</em><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::string getHouseName();<br><br>
                           
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Prints: House name, address, and room info</em><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on m_addr.getAddr(), and getRoom()</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Prints: House name, address, and room info. Each seperated by a new line</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on getHouseName(), m_addr.printAddr(), and m_roomPtr[index].getRoom()</em><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> display();<br>
                               };
                             </div>
                           </div>
-                        </div>
                         <!-- End code -->
                         </div>
                         <div class="card-body">
@@ -1612,7 +1664,7 @@
                           </h4>
                           <p class="card-text">
 
-                              Problem Coming Soon
+                              Determine the output of the above code.
   
                           </p>
                         </div>
