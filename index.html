@@ -1849,7 +1849,7 @@
     //Details: Sets m_length, m_width, m_height
 		void setRoom(int l, int w, int h);
     
-    //prints out m_length, m_width, m_height in readable format
+    //prints out m_length, m_width, m_height in readable format "l x w x h"
 		void printRoom();
 };
 /* address.h */
@@ -1866,7 +1866,7 @@ class address {
     //asks user for input and sets m_houseNum, m_city, m_state
 		void setAddr();
     
-    //prints out m_houseNum, m_city, m_state in readable format
+    //prints out m_houseNum, m_city, m_state in readable format each seperated by ", "
 		void printAddr();
 };
 
@@ -1885,7 +1885,6 @@ class house{
       /*
       parameters: int rooms
       details: Sets the m_roomPtr to an array holding room objects 
-      setAddr(int houseNum, std::string city, std::string state)
       */
       house(int rooms);
 
@@ -1922,7 +1921,7 @@ class house{
       int getRoomCount();
 
       //Details: Calls on printRoom()
-      void getRoomDim();
+      void getRoomDim(int roomNum);
 
       //Details: calls on getAddr() for m_addr
       void getAddress();
@@ -1930,8 +1929,8 @@ class house{
       //Return: name of the house
       std::string getHouseName();
 
-      //Prints: House name, address, and room info 
-      //Details: calls on m_addr.getAddr(), and getRoom()
+      //Prints: House name, address, and room info. Each seperated by a new line
+      //Details: calls on getHouseName(), m_addr.printAddr(), and m_roomPtr[index].getRoom()
 			void display();
 };
 
@@ -1941,12 +1940,17 @@ std::string moreRooms(house a, house b)
 {
   if(a.getRoomCount() > b.getRoomCount())
   {
-    return(a.getHouseName())
+    return(a.getHouseName());
+  }
+  else if(a.getRoomCount() < b.getRoomCount())
+  {
+    return(b.getHouseName());
   }
   else
   {
-    return(b.getHouseName())
+    return("SAME SIZE!");
   }
+  
 }
 
 int check()
@@ -1954,16 +1958,68 @@ int check()
   int m_roomAmount = 3;
   house aHouse(5);
   return(m_roomAmount);
+  std::cout << "Check Complete." <<'\n';
 }
 
 int main()
 {
+  int j;
   house w;
   house x(3);
-  house y(123, "Lawrence", "Kansas")
+  house y(123, "Lawrence", "Kansas");
   house* z = new house();
 
   
+  w.setAddress();
+  //assume user inputs: 1234 Escondito California
+  w.setHouseName("Pepper");
+  w.setRoomCount(2);
+  w.setRoomDim(0, 20, 20, 20);
+  w.setRoomDim(1, 10, 10, 20);
+
+  x.setAddress();
+  //assume user inputs: 3607 Screamer Alabama
+  int size = x.getRoomCount();
+  for(int i = 0; i<size; i++)
+  {
+    x.setRoomDim(i, 5, 5, 5);
+  }
+  x.setRoomDim(0, 10, 10, 10);
+  x.setHouseName("Miss Mittens");
+
+  j = check();
+  std::cout << j << '\n';
+
+  y.setHouseName("Tuna");
+  y.setRoomCount(w.getRoomCount());
+
+  int loop = 0; 
+  while(loop < w.getRoomCount()) 
+  {
+    y.setRoomDim(loop, 8, 10, 12);
+    loop++;
+    std::cout << "Set room: " << y.getRoomDim(loop) << '\n';
+  }
   
+  std::cout << moreRooms(*z, y) << '\n';
+
+  z->setHouseName("Moist");
+  z->setRoomCount(j);
+  for(int i = 0; i < j; i++)
+  {
+    z->setRoomDim(i, 13, 15, 20);
+  }
+  z->setAddress();
+  //assume user inputs: 79312 Unalaska Alaska 
+
+  z->display();
+  y.display();
+  x.display();
+  w.display();
+  std::cout << moreRooms(y, x) << '\n';
+  std::cout << check << '\n';
+  std::cout << "GOODBYE!";
+
+
 	return 0;
 } -->
