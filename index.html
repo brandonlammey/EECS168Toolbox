@@ -1448,7 +1448,7 @@
                             </h4>
                             <p class="card-text">
   
-                                Problem Coming Soon
+                                What is the output of the above code>
     
                             </p>
                           </div>
@@ -1460,7 +1460,149 @@
                       <div class="card h-100">
                         <div class="code problemCode">
                         <!-- Begin Code -->
+                        <div class="container">
+                          <div class="box1">
+                            <div class="code">
+                                <em>/* main.cpp */</em><br><br>
 
+                                std::string moreRooms(house a, house b)<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(a.getRoomCount() > b.getRoomCount())<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(a.getHouseName());<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(b.getHouseName());<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                }<br><br>
+                                
+                                <stong>int</stong> check()<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_roomAmount = 3;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house aHouse(5);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(m_roomAmount);<br>
+                                }<br><br>
+                                
+                                <strong>int</strong> main()<br>
+                                {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house w;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house x(3);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house y(123, "Lawrence", "Kansas")<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;house* z = new house();<br><br>
+                                
+                                  
+                                  
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong> 0;<br>
+                                }
+                            </div>
+                          </div>
+                          <div class="box2">
+                            <div class="code">
+                              <em>/* room.h */</em><br>
+                              <strong>class</strong> room {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>private</strong>:<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_length;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_width;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_height;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>public</strong> : <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Paramaters: int l, int w, int h</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: Sets m_length, m_width, m_height</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setRoom(<strong>int</strong> l, <strong>int</strong> w, <strong>int</strong> h);<br><br>
+                                  
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//prints out m_length, m_width, m_height in readable format</em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> printRoom();<br>
+                            };<br>
+
+                            <hr>
+
+                            <em>/* address.h */</em><br>
+                            <strong>class</strong> address {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>private</strong>:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_houseNum;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::string m_city;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::string m_state;<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>public</strong> : <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//parameters: int houseNum, std::string city, std::string state</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//sets m_houseNum, m_city, m_state using input parameters </em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setAddr(<strong>int</strong> houseNum, std::string city, std::string state);<br><br>
+                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//asks user for input and sets m_houseNum, m_city, m_state</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setAddr();<br><br>
+                                
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//prints out m_houseNum, m_city, m_state in readable format</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> printAddr();<br>
+                            };<br>
+                            
+                            <hr>
+
+                            <em>/* house.h */</em><br>
+                            <strong>class</strong> house{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>private</strong>:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::string m_houseName;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address m_addr;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> m_roomAmount;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room* m_roomPtr;<br><br>
+                            
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>public</strong> :<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//sets all variables to default values</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;house();<br><br>
+                            
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>/*<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters: int rooms<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;details: Sets the m_roomPtr to an array holding room objects <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setAddr(int houseNum, std::string city, std::string state)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;house(<strong>int</strong> rooms);<br><br>
+        
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>/*<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters: int houseNum, std::string city, std::string state<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;details: Sets the address addr of a house by calling on <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setAddr(int houseNum, std::string city, std::string state)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;house(<strong>int</strong> houseNum, std::string city, std::string state);<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//copy constructor</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;house(<strong>const</strong> house &myHouse);<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//removes room array from the heap</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~house;<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Parameters: int roomAmount</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: sets m_roomAmount</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setRoomCount(<strong>int</strong> roomAmount);<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Parameters: int length, int width, int height</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: Calls on setRoom() to set a specified rooms dimensions</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setRoomDim(<strong>int</strong> roomIndex, <strong>int</strong> length, <strong>int</strong> width, <strong>int</strong> height);<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on setAddr() for m_addr</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void setAddress();<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Paramaters: std::string name</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: sets m_houseName</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> setHouseName(std::string name);<br><br>
+                          
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Return: amount of rooms</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> getRoomCount();<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: Calls on printRoom()</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> getRoomDim();<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on getAddr() for m_addr</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> getAddress();<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Return: name of the house</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::string getHouseName();<br><br>
+                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Prints: House name, address, and room info</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>//Details: calls on m_addr.getAddr(), and getRoom()</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>void</strong> display();<br>
+                              };
+                            </div>
+                          </div>
+                        </div>
                         <!-- End code -->
                         </div>
                         <div class="card-body">
@@ -1597,9 +1739,9 @@
                     <div class="card h-100">
                           
 
-                            <div id="container">
+                            <div class="container">
 
-                                <div id="box1">
+                                <div class="box1">
                                     <div class="codeInverted">
                                   <em>/*main.cpp*/</em><br>
                                   <strong>#include</strong><"dragon.h"> <br>
@@ -1688,7 +1830,7 @@
                                 </div>
                                 </div>
 
-                                <div id="box2">
+                                <div class="box2">
                                     <div class="codeInverted">
                                   <em>/*dragon.h*/</em><br>
                                   #ifndef DRAGON_H<br>

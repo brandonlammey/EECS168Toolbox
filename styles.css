@@ -162,15 +162,15 @@ em{
     color: #BDC2C6;
 }
 
-#container {
+.container {
     width:100%;
 }
-#box1	{
+.box1	{
     width:50%;
     float: left;
     
 }
-#box2 	{
+.box2 	{
     width:50%;
     float: left;
     border-left-style: solid;
