@@ -411,7 +411,7 @@
                                 <br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;All arrays are pass by reference<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;primatives are call by value unless '&' is used <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&typeName will result in call by value 
+                                &nbsp;&nbsp;&nbsp;&nbsp;typeName &myVar will result in call by value 
                                 <br>
                                 /*
                               </em><br>
@@ -556,6 +556,107 @@
                   </div>
               </div>
 
+              <!-- Tool: Copy Constructors: Shallow vs Deep Copies -->
+            <div class="col-lg-6 portfolio-item">
+              <div class="card h-100">
+                  <div class="code">
+                      <strong>class</strong> MyObject <br>
+                      {<br>
+
+                        <strong>public</strong>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<em>// simple constructor</em><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;MyObject(<strong>int</strong> len); <br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<em>// copy constructor</em><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;MyObject(const MyObject &obj);  <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<em>// destructor</em>
+                        &nbsp;&nbsp;&nbsp;&nbsp;~MyObject();<br>        
+                     
+                        <strong>private</strong>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong>* m_ptr;<br>
+                     };
+                  </div>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#SvDCopy" data-toggle="collapse" id="linkHeader">Copy Constructors: Shallow vs. Deep Copy</a>
+                  </h4>
+                  <div id="SvDCopy" class="collapse">
+                    <p class="card-text"> 
+                        A shallow copy may contain members that point to original objects whereas a deep copy always clones every single member.<br><br>
+                        A shallow copy of an object copies all of the member field values. 
+                        This works well if the fields are values, but may not be what you want for fields that point to dynamically allocated memory, 
+                        since copying a pointer simply results in a pointer that points to the same memory as the original pointer. A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields. 
+                        To make a deep copy, you must write a copy constructor. <br><br>
+
+                        The copy constructor is a constructor which creates an object by initializing it with an object of the same class, 
+                        which has been created previously. If a copy constructor is not defined in a class, the compiler itself defines one. 
+                        If the class has pointer variables and has some dynamic memory allocations, then it is a must to have a copy constructor. 
+                        If it does not, then shallow copies are made. 
+
+
+                        <br><br>
+
+
+                    </p> 
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <!-- Tool: Dereferencing a Pointer -->
+              <div class="col-lg-6 portfolio-item">
+                <div class="card h-100">
+                        <div class="code">
+                            <em>/*Simple Comparison*/</em><br>
+                            Obj* myObjPtr;<br>
+                            myObjPtr = <strong>new</strong> Obj;<br>
+                            
+                            myObjPtr; <em>//will access the pointer </em><br>
+                            *myObjPtr; <em>//will access the object directly<br>
+                            </em>
+                            <br>
+                          <em>/*Dereferencing the this pointer*/</em><br>
+                          <strong>class</strong> MyObject <br>
+                          {<br>
+    
+                            <strong>public</strong>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>returnType</strong> myFunc() <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <em>//does something</em><br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>returnType</strong> anotherFunc(const MyObject &objParamater)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>this</strong>->myFunc(); <em>// calling memeber</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objParamater.myFunc(); <em>//member passed in</em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<strong>this</strong>; <em>//access calling object directly </em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                           <strong>private</strong>:<br>
+                           &nbsp;&nbsp;&nbsp;&nbsp;<em>//private member variables</em><br>
+                         };
+
+                        </div>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="#DereferencePointer" data-toggle="collapse" id="linkHeader">Dereferencing a Pointer</a>
+                    </h4>
+                    <div id="DereferencePointer" class="collapse">
+                      <p class="card-text"> 
+                          Dereferencing a pointer means getting the value that is stored in the memory location pointed to by the pointer. 
+                          The operator * is used to do this, and is called the dereferencing operator. 
+                          This is important when writing member functions which need to access the calling object. 
+                          <br><br>
+                          Every object in C++ has access to its own address through an important pointer called this pointer. 
+                          The <i>this</i> pointer is an implicit parameter to all member functions. 
+                          Therefore, inside a member function, <i>this</i> may be used to refer to the invoking object.
+                          <br><br>
+                          An important application of using the <i>this</i> keyword and * is when trying to return the calling object in a function. 
+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
               <!-- Tool: Try Catch Blocks -->
               <div class="col-lg-6 portfolio-item">
                   <div class="card h-100">
@@ -563,16 +664,19 @@
                           <em>//Try Catch Block:</em><br>
                           <strong>try</strong><br>
                           {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<em>/* code */</em><br><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>( something goes wrong )<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>throw</strong>("Exception explanation");<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>/* protected code */</em><br>
                           }<br>
                           <strong>catch</strong>(ExceptionType e)<br>
                           {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<em>//Code that handles exception</em><br>
-                          }
+                            &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Code that handles exception*/</em><br>
+                          }<br><br>
+
+                          <em>//Throwing an Exception:</em><br>
+                          returnType someFunc(parameters)
+                          {
+                            <strong>throw</strong> someException; 
+                          } 
+
                       </div>
                     <div class="card-body">
                       <h4 class="card-title">
@@ -584,8 +688,9 @@
                         </p> 
                         <ul>
                           <li><b>Throw:</b> An exception is <i>thrown</i> when a problem shows up like dividing by zero. We throw either the error number, an error message, or whatever helps us identify where the error occurred. </li>
-                          <li><b>Try:</b> Code inside a <i>try</i> denotes that exceptions will be thrown, either inside the try block or in a function called inside the try block.</li>
-                          <li><b>Catch:</b> A program <i>catches</i> a thrown exception and handles the problem.</li>
+                          <li><b>Try:</b> Code inside a <i>try</i> is risky code that could possibly throw an exception such as using a divide function which takes in a numerator
+                            and denominator and should return an int. Attempting to divide by zero by calling this function with a 0 denominator paramater should throw an exception which can be caught in the try-catch block </li>
+                          <li><b>Catch:</b> A program <i>catches</i> a thrown exception and handles the problem, such as by outputting a message to the user.</li>
                         </ul>
                       </div>
                     </div>
@@ -596,7 +701,15 @@
               <div class="col-lg-6 portfolio-item">
                   <div class="card h-100">
                           <div class="code">
-                            
+                            ObjName& <strong>operator</strong>+(const ObjName &rhs)<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Code that adds these two objects*/</em><br>
+                            }<br><br>
+
+                            <strong>bool</strong> <strong>operator</strong>==(const ObjName &rhs) const<br>
+                            {<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<em>/*Code that compares these two objects*/</em><br>
+                            }<br>
                           </div>
                     <div class="card-body">
                       <h4 class="card-title">
@@ -604,55 +717,23 @@
                       </h4>
                       <div id="operatorOverloading" class="collapse">
                         <p class="card-text"> 
-                            We use operator overloading to make operators work for things other than the ones they are originally designed to work with. For example, we can make a '+' work with strings and make it concatenate two strings.
+                            Overloaded operators are functions with special names: the keyword "operator" followed by the symbol for the operator being defined. 
+                            Like any other function, an overloaded operator has a return type and a parameter list.
+                            <br><br>
+                            We use operator overloading to make operators work for things other than the ones they are originally designed to work with. For example, we can make a '+' work with strings and make it concatenate two strings. 
+                            We can even write a definition to compare two objects in a similar manner to comparing two ints or two doubles. 
+                            <br><br>
+                            NOTE: Be cautious of your return type, pass by reference and pass by value will both compile but have different functionalities. 
+                            Passing by reference will allow for chaining operations to work as expected. 
                         </p>
-                        <p class=card-text>
-                          We can also use operator overloading to compare objects by using operators.
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Tool: Shallow vs Deep Copies -->
-              <div class="col-lg-6 portfolio-item">
-                  <div class="card h-100">
-                      <div class="code">
                           
                       </div>
-                    <div class="card-body">
-                      <h4 class="card-title">
-                        <a href="#SvDCopy" data-toggle="collapse" id="linkHeader">Shallow vs. Deep Copy</a>
-                      </h4>
-                      <div id="SvDCopy" class="collapse">
-                        <p class="card-text"> 
-                            The difference between a shallow copy and a deep copy in a constructor is that a shallow copy may contain members that point to original objects whereas a deep copy always clones every single member.
-                        </p> 
-                        <p>
-                            For example, let's say that we have an array of pointers that point to objects. When we make a shallow copy, we are copying the array but our pointers are still pointing to the original objects. On the other hand, when we make a deep copy, we are also copying the objects so our pointers will be pointing to cloned objects.
-                        </p> 
-                      </div>
-                    </div>
-                </div>
-              </div>
-
-              <!-- Tool: TBD -->
-              <div class="col-lg-6 portfolio-item">
-                  <div class="card h-100">
-                          <div class="code">
-                            
-                          </div>
-                    <div class="card-body">
-                      <h4 class="card-title">
-                        <a href="#" data-toggle="collapse" id="linkHeader">TBD</a>
-                      </h4>
-                      <div id="" class="collapse">
-                        <p class="card-text"> 
-                            a
-                        </p>
-                      </div>
                     </div>
                   </div>
               </div>
+
+
+
 
           </div>
       </div>
@@ -2046,9 +2127,9 @@
                             </h4>
                             <p class="card-text">
   
-                                Determine and illustrate the memory at marked positions A, B, C, D, and E in the code. 
+                                Determine and illustrate the memory at marked positions A, B, C, D, and E in the code in main. 
                                 Note any errors in code if they exist and do not illustrate error causing code in memory.
-                                Assume all class functions are defined correctly as descirbed in the comments. 
+                                Assume all class member functions are defined correctly as described in the comments 
   
                             </p>
                           </div>
@@ -2061,6 +2142,217 @@
                           <div class="codeInverted">
                             <!-- Begin Code -->
 
+
+                            <div class="box1">
+                            <div class="codeInverted">
+                              <em>/*main.cpp*/</em><br>
+                              bool validDeck(Deck& tempDeck)
+                              {
+                                if(checkSize(tempDeck) == 40)
+                                  return(true);
+                                return(false);
+                              }
+                              
+                              bool validDeck(SideDeck& tempDeck)
+                              {
+                                if(checkSize(tempDeck) == 40)
+                                  return(true);
+                                return(false);
+                              }
+                              
+                              int checkSize(Deck& tDeck)
+                              {
+                                return(tDeck.getDeckSize());
+                              }
+                              
+                              int checkSize(SideDeck& deck)
+                              {
+                                return(deck.getDeckSize());
+                              }
+                              
+                              
+                              int main()
+                              {
+                                Deck d1(40);
+                                Deck* d2 = new Deck(5);
+                                SideDeck d3(50);
+                                SideDeck* d4 = new Deck(1);
+                                Deck* d5 = new Deck[3];
+                              
+                                for(int i; i< d1.getDeckSize(); i++)
+                                {
+                                  d1.setCard(i, "Dark Magician");
+                                }
+                              
+                                for(int i; i< d2->getDeckSize(); i++)
+                                {
+                                  d2->setCard(i, "Dark Chaos Magician");
+                                }
+                              
+                                //A
+                              
+                                d2->setDeckSize(10);
+                              
+                                bool tournamentLegal;
+                                tournamentLegal = validDeck(d3);
+                              
+                                for(int i; i< d3.getDeckSize(); i++)
+                                {
+                                  d3.setCard(i, "Blue Eyes White Dragon");
+                                }
+                              
+                                d2->setCard(0, "Dark Chaos Magician");
+                              
+                                //B
+                              
+                                if(!tournamentLegal)
+                                {
+                                  d3.setDeckSize(40);
+                                }
+                              
+                                //C: memory inside validDeck as it calls checkSize before checkSize returns 
+                                tournamentLegal = validDeck(d1);
+                              
+                                if(!tournamentLegal)
+                                {
+                                  d1.setDeckSize(40);
+                                }
+                              
+                                if(d1 == *d2)
+                                {
+                                  try
+                                  {
+                                    d1.getCard(100);
+                                  }
+                                  catch(const char* msg)
+                                  {
+                                    d1.setDeckSize(100);
+                                  }
+                                }
+                                else
+                                {
+                                  if(d1.getDeckSize() > d2->getDeckSize())
+                                  {
+                                    d2->setDeckSize(d1.getDeckSize());
+                                  }
+                                  else
+                                  {
+                                    d1.setDeckSize(d2->getDeckSize());
+                                  }
+                                }
+                              
+                                //D
+                              
+                                bool a = validDeck(d1);
+                                bool b = validDeck(*d2);
+                                bool c = validDeck(d3);
+                                bool d = validDeck(*d4);
+                              
+                                std::string c1;
+                                std::string c2;
+                              
+                                try
+                                {
+                                  c1 = d1.getCard(0);
+                                  c2 = d4->getCard(0);
+                              
+                                }catch(const char* msg)
+                                {
+                                  d1.setSize(40);
+                                  delete d4;
+                                }
+                                delete d2;
+                              
+                                //E
+                              
+                                return(0);
+                              } 
+                            </div>
+                            </div>
+
+                            <div class="box2">
+                              <div class="codeInverted">
+                                <em>/*Deck.h*/</em><br>
+                                class Deck
+                                {
+                                  private: 
+                                    std::string* m_Deck;
+                                    int m_numCards;
+                                  
+                                  public:
+                                    //constructor(s) and destructor 
+                                    Deck(int size);
+                                    Deck(const Deck &myDeck);
+                                    ~Deck();
+
+                                    /*  Return:name of card
+                                        Paramaters: index of card
+                                        Exceptions: "Invalid Index." 
+                                    */ 
+                                    std::string getCard(int index) throw();
+
+                                    /*  Return: True if card name was set, false otherwise 
+                                        Paramaters: index of card and name of card to put in Deck
+                                    */ 
+                                    bool setCard(int index, std::string cardName);
+
+                                    //Return: m_numCards
+                                    int getDeckSize();
+
+
+                                    /*  Return: True if deck size was changed to new size 
+                                                else false if new size is smaller than old size 
+                                        Paramaters: new size of Deck
+                                        Details: creates a new array of size "size" if larger than initial size, 
+                                                if smaller than initial size then do nothing and return false
+                                    */ 
+                                    bool setDeckSize(int size);
+
+                                    //Compares two decks for equal values and same indices
+                                    bool operation==(const Deck &rhs) const;
+
+                                }
+                                <br>
+                                <em>/*SideDeck.h*/</em><br>
+                                class SideDeck
+                                {
+                                  private: 
+                                    std::string* m_Deck;
+                                    int m_numCards;
+                                  
+                                  public:
+                                    //constructor(s) and destructor 
+                                    SideDeck(int size);
+                                    ~SideDeck();
+
+                                    /*  Return: name of card 
+                                        Paramaters: index of card
+                                        Exceptions: Returns empty string if out of bounds 
+                                    */ 
+                                    std::string getCard(int index)
+
+                                    /*  Return: True if card name was set, false otherwise 
+                                        Paramaters: index of card and name of card to put in Deck
+                                    */ 
+                                    bool setCard(int index, std::string cardName);
+
+                                    //Return: m_numCards
+                                    int getDeckSize();
+
+
+                                    /*  Return: True if deck size was changed to new size 
+                                                else false if new size is smaller than old size 
+                                        Paramaters: new size of Deck
+                                        Details: creates a new array of size "size" if larger than initial size, 
+                                                if smaller than initial size then do nothing and return false
+                                    */ 
+                                    bool setDeckSize(int size);
+
+                                } 
+
+                              </div>
+                            </div>
+                            
                             <!-- End code -->
                           </div>
                           
@@ -2070,7 +2362,7 @@
                             </h4>
                             <p class="card-text">
   
-                              Problem Coming Soon
+                                Determine and illustrate the memory at marked positions A, B, C, D, and E in the code in main. Note any errors in code if they exist and do not illustrate error causing code in memory. Assume all class member functions are defined correctly as described in the comments.
   
                             </p>
                           </div>
@@ -2102,15 +2394,12 @@
     <!-- Section Practice Problems: End -->
     
 
-
-
-
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
           <p class="m-0 text-center text-white">Copyright &copy; Brandon Lammey 2018</p>
 
-          <p class="m-0 text-center text-white">Updated: April 25, 2018</p>
+          <p class="m-0 text-center text-white">Updated: May 3, 2018</p>
         </div>
     </footer>
 
@@ -2126,193 +2415,3 @@
 
   </body>
 </html>
-
-
-
-
-<!-- 
-  /* room.h */
-  class room {
-  private:
-    int m_length;
-    int m_width;
-    int m_height;
-  public : 
-    //Paramaters: int l, int w, int h
-    //Details: Sets m_length, m_width, m_height
-		void setRoom(int l, int w, int h);
-    
-    //prints out m_length, m_width, m_height in readable format "l x w x h"
-		void printRoom();
-};
-/* address.h */
-class address {
-  private:
-    int m_houseNum;
-    std::string m_city;
-    std::string m_state;
-  public : 
-    //parameters: int houseNum, std::string city, std::string state
-    //sets m_houseNum, m_city, m_state using input parameters 
-    void setAddr(int houseNum, std::string city, std::string state);
-
-    //asks user for input and sets m_houseNum, m_city, m_state
-		void setAddr();
-    
-    //prints out m_houseNum, m_city, m_state in readable format each seperated by ", "
-		void printAddr();
-};
-
-/* house.h */
-class house{
-  private:
-	std::string m_houseName;
-  address m_addr;
-  int m_roomAmount; 
-  room* m_roomPtr;
-
-  public : 
-      //sets all variables to default values 
-      house();
-
-      /*
-      parameters: int rooms
-      details: Sets the m_roomPtr to an array holding room objects 
-      */
-      house(int rooms);
-
-      /*
-      parameters: int houseNum, std::string city, std::string state
-      details: Sets the address addr of a house by calling on 
-      setAddr(int houseNum, std::string city, std::string state)
-      */
-      house(int houseNum, std::string city, std::string state);
-
-      //copy constructor 
-      house( const house &myHouse);
-
-      //removes room array from the heap
-      ~house;
-
-      //Parameters: int roomAmount
-      //Details: sets m_roomAmount
-      void setRoomCount(int roomAmount);
-
-      Parameters: int length, int width, int height
-      Details: Calls on setRoom() to set a specified rooms dimensions 
-      void setRoomDim(int roomIndex, int length, int width, int height);
-
-      //Details: calls on setAddr() for m_addr
-      void setAddress();
-
-      //Paramaters: std::string name
-      //Details: sets m_houseName
-      void setHouseName(std::string name);
-
-
-      //Return: amount of rooms
-      int getRoomCount();
-
-      //Details: Calls on printRoom()
-      void getRoomDim(int roomNum);
-
-      //Details: calls on getAddr() for m_addr
-      void getAddress();
-
-      //Return: name of the house
-      std::string getHouseName();
-
-      //Prints: House name, address, and room info. Each seperated by a new line
-      //Details: calls on getHouseName(), m_addr.printAddr(), and m_roomPtr[index].getRoom()
-			void display();
-};
-
-/* main.cpp */
-
-std::string moreRooms(house a, house b)
-{
-  if(a.getRoomCount() > b.getRoomCount())
-  {
-    return(a.getHouseName());
-  }
-  else if(a.getRoomCount() < b.getRoomCount())
-  {
-    return(b.getHouseName());
-  }
-  else
-  {
-    return("SAME SIZE!");
-  }
-  
-}
-
-int check()
-{
-  int m_roomAmount = 3;
-  house aHouse(5);
-  return(m_roomAmount);
-  std::cout << "Check Complete." <<'\n';
-}
-
-int main()
-{
-  int j;
-  house w;
-  house x(3);
-  house y(123, "Lawrence", "Kansas");
-  house* z = new house();
-
-  
-  w.setAddress();
-  //assume user inputs: 1234 Escondito California
-  w.setHouseName("Pepper");
-  w.setRoomCount(2);
-  w.setRoomDim(0, 20, 20, 20);
-  w.setRoomDim(1, 10, 10, 20);
-
-  x.setAddress();
-  //assume user inputs: 3607 Screamer Alabama
-  int size = x.getRoomCount();
-  for(int i = 0; i<size; i++)
-  {
-    x.setRoomDim(i, 5, 5, 5);
-  }
-  x.setRoomDim(0, 10, 10, 10);
-  x.setHouseName("Miss Mittens");
-
-  j = check();
-  std::cout << j << '\n';
-
-  y.setHouseName("Tuna");
-  y.setRoomCount(w.getRoomCount());
-
-  int loop = 0; 
-  while(loop < w.getRoomCount()) 
-  {
-    y.setRoomDim(loop, 8, 10, 12);
-    loop++;
-    std::cout << "Set room: " << y.getRoomDim(loop) << '\n';
-  }
-  
-  std::cout << moreRooms(*z, y) << '\n';
-
-  z->setHouseName("Moist");
-  z->setRoomCount(j);
-  for(int i = 0; i < j; i++)
-  {
-    z->setRoomDim(i, 13, 15, 20);
-  }
-  z->setAddress();
-  //assume user inputs: 79312 Unalaska Alaska 
-
-  z->display();
-  y.display();
-  x.display();
-  w.display();
-  std::cout << moreRooms(y, x) << '\n';
-  std::cout << check << '\n';
-  std::cout << "GOODBYE!";
-
-
-	return 0;
-} -->
