@@ -2146,208 +2146,208 @@
                             <div class="box1">
                             <div class="codeInverted">
                               <em>/*main.cpp*/</em><br>
-                              bool validDeck(Deck& tempDeck)
-                              {
-                                if(checkSize(tempDeck) == 40)
-                                  return(true);
-                                return(false);
+                              <strong>bool</strong> validDeck(Deck& tempDeck)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(checkSize(tempDeck) == 40)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong>return</strong>(true);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(false);<br>
+                              }<br>
+                              <br>
+                              <strong>bool</strong> validDeck(SideDeck& tempDeck)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(checkSize(tempDeck) == 40)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong>return</strong>(true);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(false);<br>
+                              }<br>
+                              <br>
+                              <strong>int</strong> checkSize(Deck& tDeck)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(tDeck.getDeckSize());<br>
+                              }<br>
+                              <br>
+                              <strong>int</strong> checkSize(SideDeck& deck)<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(deck.getDeckSize());<br>
+                              }<br>
+                              <br>
+                              <br>
+                              <strong>int</strong> main()<br>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Deck d1(40);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Deck* d2 = new Deck(5);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;SideDeck d3(50);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;SideDeck* d4 = new Deck(1);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Deck* d5 = new Deck[3];<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i; i < d1.getDeckSize(); i++)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1.setCard(i, "Dark Magician");<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i; i < d2->getDeckSize(); i++)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  d2->setCard(i, "Dark Chaos Magician");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              <br>
+                                <em>//A</em><br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;d2->setDeckSize(10);<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> tournamentLegal;<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;tournamentLegal = validDeck(d3);<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>for</strong>(<strong>int</strong> i; i < d3.getDeckSize(); i++)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  d3.setCard(i, "Blue Eyes White Dragon");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp; d2->setCard(0, "Dark Chaos Magician");<br>
+                              <br>
+                              <em>//B</em><br>
+                              
+                              &nbsp;&nbsp;&nbsp;&nbsp;  <strong>if</strong>(!tournamentLegal)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;  {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    d3.setDeckSize(40);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;  }<br>
+                              <br>
+                                <em>//C: memory inside validDeck as it calls checkSize before checkSize returns </em><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;  tournamentLegal = validDeck(d1);<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;  <strong>if</strong>(!tournamentLegal)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;  {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    d1.setDeckSize(40);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;  }<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;  <strong>if</strong>(d1 == *d2)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;  {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>try</strong><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;1.getCard(100);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>catch</strong>(<strong>const</strong> char* msg)<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  d1.setDeckSize(100);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong>(d1.getDeckSize() > d2->getDeckSize())<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2->setDeckSize(d1.getDeckSize());<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  d1.setDeckSize(d2->getDeckSize());<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                              <br>
+                                <em>//D</em><br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> a = validDeck(d1);<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> b = validDeck(*d2);<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> c = validDeck(d3);<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> d = validDeck(*d4);<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;std::string c1;<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;std::string c2;<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>try</strong><br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c1 = d1.getCard(0);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2 = d4->getCard(0);<br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;}<strong>catch</strong>(<strong>const</strong> char* msg)<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1.setSize(40);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>delete</strong> d4;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong>delete</strong> d2;<br>
+                              <br>
+                                <em>//E</em><br>
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong>(0);<br>
                               }
-                              
-                              bool validDeck(SideDeck& tempDeck)
-                              {
-                                if(checkSize(tempDeck) == 40)
-                                  return(true);
-                                return(false);
-                              }
-                              
-                              int checkSize(Deck& tDeck)
-                              {
-                                return(tDeck.getDeckSize());
-                              }
-                              
-                              int checkSize(SideDeck& deck)
-                              {
-                                return(deck.getDeckSize());
-                              }
-                              
-                              
-                              int main()
-                              {
-                                Deck d1(40);
-                                Deck* d2 = new Deck(5);
-                                SideDeck d3(50);
-                                SideDeck* d4 = new Deck(1);
-                                Deck* d5 = new Deck[3];
-                              
-                                for(int i; i< d1.getDeckSize(); i++)
-                                {
-                                  d1.setCard(i, "Dark Magician");
-                                }
-                              
-                                for(int i; i< d2->getDeckSize(); i++)
-                                {
-                                  d2->setCard(i, "Dark Chaos Magician");
-                                }
-                              
-                                //A
-                              
-                                d2->setDeckSize(10);
-                              
-                                bool tournamentLegal;
-                                tournamentLegal = validDeck(d3);
-                              
-                                for(int i; i< d3.getDeckSize(); i++)
-                                {
-                                  d3.setCard(i, "Blue Eyes White Dragon");
-                                }
-                              
-                                d2->setCard(0, "Dark Chaos Magician");
-                              
-                                //B
-                              
-                                if(!tournamentLegal)
-                                {
-                                  d3.setDeckSize(40);
-                                }
-                              
-                                //C: memory inside validDeck as it calls checkSize before checkSize returns 
-                                tournamentLegal = validDeck(d1);
-                              
-                                if(!tournamentLegal)
-                                {
-                                  d1.setDeckSize(40);
-                                }
-                              
-                                if(d1 == *d2)
-                                {
-                                  try
-                                  {
-                                    d1.getCard(100);
-                                  }
-                                  catch(const char* msg)
-                                  {
-                                    d1.setDeckSize(100);
-                                  }
-                                }
-                                else
-                                {
-                                  if(d1.getDeckSize() > d2->getDeckSize())
-                                  {
-                                    d2->setDeckSize(d1.getDeckSize());
-                                  }
-                                  else
-                                  {
-                                    d1.setDeckSize(d2->getDeckSize());
-                                  }
-                                }
-                              
-                                //D
-                              
-                                bool a = validDeck(d1);
-                                bool b = validDeck(*d2);
-                                bool c = validDeck(d3);
-                                bool d = validDeck(*d4);
-                              
-                                std::string c1;
-                                std::string c2;
-                              
-                                try
-                                {
-                                  c1 = d1.getCard(0);
-                                  c2 = d4->getCard(0);
-                              
-                                }catch(const char* msg)
-                                {
-                                  d1.setSize(40);
-                                  delete d4;
-                                }
-                                delete d2;
-                              
-                                //E
-                              
-                                return(0);
-                              } 
                             </div>
                             </div>
 
                             <div class="box2">
                               <div class="codeInverted">
                                 <em>/*Deck.h*/</em><br>
-                                class Deck
-                                {
-                                  private: 
-                                    std::string* m_Deck;
-                                    int m_numCards;
-                                  
-                                  public:
-                                    //constructor(s) and destructor 
-                                    Deck(int size);
-                                    Deck(const Deck &myDeck);
-                                    ~Deck();
+                                <strong>class</strong> Deck<br>
+                                {<br>
+                                  <strong>private</strong>: <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  std::string* m_Deck;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  <strong>int</strong> m_numCards;<br>
+                                    <br>
+                                  <strong>public</strong>:<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<em>//constructor(s) and destructor </em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Deck(<strong>int</strong> size);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;Deck(<strong>const</strong> Deck &myDeck);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;~Deck();<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>/*  Return:name of card<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;    Paramaters: index of card<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;    Exceptions: "Invalid Index." <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;*/ </em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;std::string getCard(<strong>int</strong> index) <strong>throw</strong>();<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>/*  Return: True if card name was set, false otherwise <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;    Paramaters: index of card and name of card to put in Deck<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;*/ </em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp; <strong>bool</strong> setCard(<strong>int</strong> index, std::string cardName);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//Return: m_numCards</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>int</strong> getDeckSize();<br>
+                                    <br>
 
-                                    /*  Return:name of card
-                                        Paramaters: index of card
-                                        Exceptions: "Invalid Index." 
-                                    */ 
-                                    std::string getCard(int index) throw();
-
-                                    /*  Return: True if card name was set, false otherwise 
-                                        Paramaters: index of card and name of card to put in Deck
-                                    */ 
-                                    bool setCard(int index, std::string cardName);
-
-                                    //Return: m_numCards
-                                    int getDeckSize();
-
-
-                                    /*  Return: True if deck size was changed to new size 
-                                                else false if new size is smaller than old size 
-                                        Paramaters: new size of Deck
-                                        Details: creates a new array of size "size" if larger than initial size, 
-                                                if smaller than initial size then do nothing and return false
-                                    */ 
-                                    bool setDeckSize(int size);
-
-                                    //Compares two decks for equal values and same indices
-                                    bool operation==(const Deck &rhs) const;
-
-                                }
-                                <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>/*  Return: True if deck size was changed to new size <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;            else false if new size is smaller than old size <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;    Paramaters: new size of Deck<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;     Details: creates a new array of size "size" if larger than initial size, <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;            if smaller than initial size then do nothing and return false<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp; */ </em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> setDeckSize(<strong>int</strong> size);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<em>//Compares two decks for equal values and same indices</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> operation==(<strong>const</strong> Deck &rhs) <strong>const</strong>;<br>
+                                    <br>
+                                }<br>
+                                <br><br>
                                 <em>/*SideDeck.h*/</em><br>
-                                class SideDeck
-                                {
-                                  private: 
-                                    std::string* m_Deck;
-                                    int m_numCards;
-                                  
-                                  public:
-                                    //constructor(s) and destructor 
-                                    SideDeck(int size);
-                                    ~SideDeck();
+                                <strong>class</strong> SideDeck<br>
+                                {<br>
+                                  <strong>private</strong>: <br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;std::string* m_Deck;<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  <strong>int</strong> m_numCards;<br>
+                                    <br>
+                                  <strong>public</strong>:<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  <em>//constructor(s) and destructor </em><br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  SideDeck(<strong>int</strong> size);<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;  ~SideDeck();<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;  <em>/*  Return: name of card <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;      Paramaters: index of card<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;      Exceptions: Returns empty string if out of bounds <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  */ </em>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  std::string getCard(<strong>int</strong> index)<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;  <em>/*  Return: True if card name was set, false otherwise <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;      Paramaters: index of card and name of card to put in Deck<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  */ </em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  <strong>bool</strong> setCard(<strong>int</strong> index, std::string cardName);<br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;  <em>//Return: m_numCards</em><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;  <strong>int</strong> getDeckSize();<br>
+                                    <br>
 
-                                    /*  Return: name of card 
-                                        Paramaters: index of card
-                                        Exceptions: Returns empty string if out of bounds 
-                                    */ 
-                                    std::string getCard(int index)
-
-                                    /*  Return: True if card name was set, false otherwise 
-                                        Paramaters: index of card and name of card to put in Deck
-                                    */ 
-                                    bool setCard(int index, std::string cardName);
-
-                                    //Return: m_numCards
-                                    int getDeckSize();
-
-
-                                    /*  Return: True if deck size was changed to new size 
-                                                else false if new size is smaller than old size 
-                                        Paramaters: new size of Deck
-                                        Details: creates a new array of size "size" if larger than initial size, 
-                                                if smaller than initial size then do nothing and return false
-                                    */ 
-                                    bool setDeckSize(int size);
-
+                                    &nbsp;&nbsp;&nbsp;&nbsp;  <em>/*  Return: True if deck size was changed to new size <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;              else false if new size is smaller than old size <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  Paramaters: new size of Deck<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  Details: creates a new array of size "size" if larger than initial size, <br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;         if smaller than initial size then do nothing and return false<br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;*/ </em><br>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;<strong>bool</strong> setDeckSize(<strong>int</strong> size);<br>
+                                    <br>
                                 } 
 
                               </div>
